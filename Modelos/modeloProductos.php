@@ -7,7 +7,7 @@
 
         public function __construct() {
             $this->producto = array();
-            $this->db = new PDO('mysql:host=localhost;dbname=medi', "movil1301", "Movil$1301");
+            $this->db = new PDO('mysql:host=34.224.30.50;dbname=BasePortales', "proyectoportales2", "proyectoportales2");
         }
 
         private function setNames() {
@@ -27,7 +27,7 @@
             $this->db = null;
         }
 
-        public function getProductos($id) {
+        public function serchProducto($id) {
 
             self::setNames();
             $sql = "SELECT IdProducto, NombreProducto, DescripcionProducto, ISV, Imagen, Estado, c.NombreCategoria
@@ -43,8 +43,8 @@
         public function setProductos($nombre, $descripcion, $isv, $img, $estado, $categoriaId) {
 
             self::setNames();
-            $sql = "INSERT INTO Productos( NombreProducto, DescripcionProducto, ISV, Imagen, Estado, Categorias_IdCategoria )
-                    VALUES ( "$nombre", "$descripcion", $isv, "$img", $estado, $categoriaId )";
+            $sql = "INSERT INTO Productos( NombreProducto, DescripcionProducto, ISV, Imagen, Estado, Categorias_IdCategoria ) 
+                    VALUES ( '$nombre', '$descripcion', $isv, '$img', $estado, $categoriaId )";
             $result = $this->db->query($sql);
     
             if ($result) {

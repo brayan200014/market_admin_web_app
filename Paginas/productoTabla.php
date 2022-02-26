@@ -1,3 +1,4 @@
+<?php include_once('../Controladores/controladorProductos.php') ?>
 <?php include_once('../Plantilla/header.php') ?>
 
 <!-- Page Heading -->
@@ -16,33 +17,28 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Descripcion</th>
+                            <th>Categoria</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                    </tfoot>
                     <tbody>
+                        <?php
+
+                            $datosProductos = listar();
+                        
+                            for($i = 0; $i < sizeof($datosProductos); $i++){
+                        ?>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td><?php echo $datosProductos[$i]['IdProducto'] ?></td>
+                            <td><?php echo $datosProductos[$i]['NombreProducto'] ?></td>
+                            <td><?php echo $datosProductos[$i]['DescripcionProducto'] ?></td>
+                            <td><?php echo $datosProductos[$i]['NombreCategoria'] ?></td>
                         </tr>
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>
