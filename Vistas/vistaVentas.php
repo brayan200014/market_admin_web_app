@@ -42,7 +42,7 @@
                                             $ventasRegistradas= getVentasRegistradas();
                                             for($i=0; $i < sizeof($ventasRegistradas); $i++ ) {
                                         ?>
-                                       <td> <?php echo $ventasRegistradas[$i]['IdVenta'] ?></td>
+                                        <td> <?php echo $ventasRegistradas[$i]['IdVenta'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['FechaVenta'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['Identidad'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['NombreSucursal'] ?></td>

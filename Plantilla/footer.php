@@ -69,6 +69,9 @@
     <!-- Page level custom scripts -->
     <script src="../Plantilla/js/demo/datatables-demo.js"></script>
 
+    <!-- Script de añadir fila añadido Brayan -->
+    <script src="../Plantilla/js/codigo.js"></script>
+
 </body>
 
 </html>

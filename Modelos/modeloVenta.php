@@ -10,6 +10,8 @@
         private $idUsuario;
         private $db;
         private $venta;
+        private $idVentaAgregado;
+        
 
         
 
@@ -97,8 +99,32 @@
              $this->db= null;
          }
 
-        
+         public function setGuardarVenta(){
+             self::setNames();
+             $hoy = date("Ymd"); 
+             $consulta='INSERT INTO Ventas(FechaVenta, Subtotal,ISV, Clientes_IdCliente, Usuarios_IdUsuario, Sucursales_IdSucursal)
+              values('.$hoy.','. 700 .','. $this->ISV .','.$this->idCliente.','.$this->idUsuario.','.$this->idSucursal.');';
+               $result= $this->db->query($consulta); 
 
+            if($result) {
+                return true;
+            }
+            else 
+            {
+                return false; 
+            }
+        }
+
+        public function getIdVentaAgregado() {
+            self::setNames();
+            $consulta= 'select MAX(IdVenta) IdVenta from Ventas;';
+            foreach($this->db->query($consulta) as $res) {
+                $this->idVentaAgregado[]= $res;
+         }
+
+         return $this->idVentaAgregado;
+         $this->db= null;
+        }
 
     }
 ?>
