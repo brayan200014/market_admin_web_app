@@ -57,10 +57,13 @@
 
     <!-- Page level plugins -->
     <script src="../Plantilla/vendor/chart.js/Chart.min.js"></script>
+    <script src="../Plantilla/vendor/datatables/jquery.dataTables.min.js"></script> <!--TABLA-->
+    <script src="../Plantilla/vendor/datatables/dataTables.bootstrap4.min.js"></script> <!--ESTILOS TABLA-->
 
     <!-- Page level custom scripts -->
     <script src="../Plantilla/js/demo/chart-area-demo.js"></script>
     <script src="../Plantilla/js/demo/chart-pie-demo.js"></script>
+    <script src="../Plantilla/js/demo/datatables-demo.js"></script><!--PARA LOS ESTILOS-->
 
 </body>
 
