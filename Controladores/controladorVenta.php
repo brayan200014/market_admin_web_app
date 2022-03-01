@@ -2,6 +2,17 @@
 <?php include_once('../Modelos/modeloDetalleVenta.php') ?>
 
 <?php 
+
+
+
+    
+    function validarDatosVentas() {
+        if(!empty($_POST)) {
+            setGuardarVentaEnviada();
+
+        }
+    }
+
    function getVentasRegistradas() {
         $modeloVenta= new Venta();
         $ventas= $modeloVenta->getVentas();

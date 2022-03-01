@@ -38,10 +38,12 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                    
                                         <?php
                                             $ventasRegistradas= getVentasRegistradas();
                                             for($i=0; $i < sizeof($ventasRegistradas); $i++ ) {
                                         ?>
+                                          <tr>  
                                         <td> <?php echo $ventasRegistradas[$i]['IdVenta'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['FechaVenta'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['Identidad'] ?></td>
@@ -50,7 +52,9 @@
                                         <td><?php echo $ventasRegistradas[$i]['Subtotal'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['ISV'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['Total'] ?></td>
+                                        </tr>
                                        
                                        <?php  } ?>
+                                            
                                     </tbody>
                                 </table>

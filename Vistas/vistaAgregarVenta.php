@@ -37,6 +37,6 @@
 </div>
 </div>
 <div class="d-flex justify-content-center"><button type="button" id="Agregar" onclick="agregarFila()" class="btn btn-outline-primary btn-sm">Agregar fila detalle</button></div>
-<div class="d-flex justify-content-end"><button class="btn btn-primary" type= "submit" >Agregar Venta</button></div> <br>
+<div class="d-flex justify-content-end"><button class="btn btn-primary" type= "submit" onclick="<?php validarDatosVentas() ?>" >Agregar Venta</button></div> <br>
  </form>
 
