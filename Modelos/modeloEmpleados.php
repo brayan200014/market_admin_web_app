@@ -14,14 +14,20 @@
             return $this->db->query("SET NAMES 'utf8'");
         }
 
-        public function getEmployees() {
+        //OBTENER EMPLEADOS
+        public function ObtenerEmployees() {
 
             self::setNames();
-            $sql = "SELECT IdEmpleado, CONCAT(Nombre, ' ', Apellido) As Nombre, Telefono, Email, NombreSucursal, NombreCiudad
-                    FROM Empleados INNER JOIN Sucursales s
-                    ON Empleados.Sucursales_IdSucursal = s.IdSucursal
-                    INNER JOIN Ciudades c 
-                    ON  s. Ciudades_IdCiudad = c. IdCiudad";
+
+            $sql = "SELECT IdEmpleado, CONCAT(Nombre, ' ', Apellido) AS Nombre, Telefono, Email, Estado, NombreSucursal, NombreCiudad, p.DescripcionPuesto
+                    FROM `Empleados` e
+                    INNER JOIN `Sucursales` s
+                    ON e.Sucursales_IdSucursal = s.IdSucursal  
+                    INNER JOIN `Ciudades` c 
+                    ON  s. Ciudades_IdCiudad = c. IdCiudad 
+                    INNER JOIN `Puestos` p
+                    ON e.Puestos_IdPuesto = p.IdPuesto;";
+
             foreach ($this->db->query($sql) as $res) {
                 $this->empleado[] = $res;
             }
@@ -29,11 +35,12 @@
             $this->db = null;
         }
 
+        //BUSCAR EMPLEADOS
         public function serchEmployees($id) {
 
             self::setNames();
-            $sql = "SELECT IdEmpleado, CONCAT(Nombre, ' ', Apellido) As Nombre, Telefono, Email, NombreSucursal, NombreCiudad
-                    FROM Empleados INNER JOIN Sucursales s
+            $sql = "SELECT IdEmpleado, Nombre,  Apellido, Telefono, Email, NombreSucursal, NombreCiudad
+                    FROM `Empleados` INNER JOIN Sucursales s
                     ON Empleados.Sucursales_IdSucursal = s.IdSucursal
                     INNER JOIN Ciudades c 
                     ON  s. Ciudades_IdCiudad = c. IdCiudad
@@ -45,11 +52,12 @@
             $this->db = null;
         }
 
-        public function setEmployees($Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $sucursalesId, $PuestosId) {
+        //GUARDAR EMPLEADOS
+        public function setEmployees($Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
 
             self::setNames();
-            $sql = "INSERT INTO Empleados( Nombre, Apellido, Telefono, Direccion, Email, FechaContratacion, Estado, sucursalesId, PuestosId ) 
-                    VALUES ( '$Nombre', '$Apellido', '$Telefono', $Direccion, '$Email', $FechaContratacion , $Estado , '$sucursalesId', '$PuestosId')";
+            $sql = "INSERT INTO Empleados( Nombre, Apellido, Telefono, Direccion, Email, FechaContratacion, Estado, Sucursales_IdSucursal, Puestos_IdPuesto) 
+                    VALUES ( '$Nombre', '$Apellido', '$Telefono', '$Direccion', '$Email', '$FechaContratacion' , '$Estado' , $Sucursales_IdSucursal, $Puestos_IdPuesto)";
             $result = $this->db->query($sql);
     
             if ($result) {
@@ -58,7 +66,22 @@
                 return false;
             }
         }
+        //LLENADO DE COMBOBOX PUESTOS DESDE LA BD
+        public function ObtenerPuestos(){
 
+            self::setNames();
+
+            $sql = "SELECT * FROM Puestos";
+
+            foreach ($this -> db -> query($sql) as $result){
+                $this -> empleado[] = $result;
+            }
+
+            return $this -> empleado;
+            $this -> db -> null;
+        }
+
+        //ELIMINAR EMPLEADOS
         public function deleteEmployees($id) {
 
             self::setNames();
@@ -68,6 +91,30 @@
             if ($result) {
                 return true;
             } else {
+                return false;
+            }
+        }
+
+        //ACTUALIZAR EMPLEADOS
+        public function UpdateEmployees($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
+            self::setNames();
+    
+            $sql="UPDATE empleados SET 
+            Nombre='$Nombre',
+            Apellido='$Apellido',
+            Telefono='$Telefono',
+            Direccion='$Direccion',
+            Email='$Email',
+            FechaContratacion='$FechaContratacion',
+            Estado='$Estado',
+            Sucursales_IdSucursal='$Sucursales_IdSucursal',
+            Puestos_IdPuesto='$Puestos_IdPuesto',
+            WHERE IdEmpleado='$id'";
+    
+            $result=$this->db->query($sql);
+            if($result){
+                return true;
+            }else{
                 return false;
             }
         }
