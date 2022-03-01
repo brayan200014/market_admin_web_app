@@ -4,4 +4,6 @@
         $modeloProducto = new Producto();
         return $modeloProducto->getProductos();
     }
+
+    
 ?>

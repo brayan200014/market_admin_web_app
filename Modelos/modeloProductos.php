@@ -54,6 +54,18 @@
             }
         }
 
+        public function updateProducts($id, $nombre, $descripcion, $isv, $img, $estado, $categoriaId){
+            self::setNames();
+            $sql = "UPDATE Productos SET NombreProducto = '$nombre' , DescripcionProducto = '$descripcion', ISV = $isv, Imagen = '$img', Estado = $estado, Categorias_IdCategoria = $categoriaId WHERE IdProducto = $id";
+            $result = $this->db->query($sql);
+
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
         public function deleteProducto($id) {
 
             self::setNames();

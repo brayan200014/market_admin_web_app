@@ -21,7 +21,7 @@
     <link href="../Plantilla/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="../Plantilla/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../Plantilla/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"><!-- New -->
 
 </head>
 
