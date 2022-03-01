@@ -23,6 +23,7 @@
                                             <th>Subtotal</th>
                                             <th>ISV</th>
                                             <th>Total</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -35,6 +36,7 @@
                                             <th>Subtotal</th>
                                             <th>ISV</th>
                                             <th>Total</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -52,6 +54,9 @@
                                         <td><?php echo $ventasRegistradas[$i]['Subtotal'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['ISV'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['Total'] ?></td>
+                                        <td> <button class="btn btn-primary btn-sm" type="submit"><i class="fas fa-eye"></i></button>
+                                              <button class="btn btn-primary btn-sm" type="submit"><i class="fas fa-pen"></i></button>
+                                            
                                         </tr>
                                        
                                        <?php  } ?>
