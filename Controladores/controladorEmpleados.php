@@ -1,6 +1,6 @@
 <?php
       include_once('../Modelos/modeloEmpleados.php');
-       function listar(){
+       function listarEmpleados(){
        $modeloEmpleados = new Empleado();
        return $modeloEmpleados->ObtenerEmployees();
    }
