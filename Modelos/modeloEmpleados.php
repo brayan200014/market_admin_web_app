@@ -19,14 +19,12 @@
 
             self::setNames();
 
-            $sql = "SELECT IdEmpleado, CONCAT(Nombre, ' ', Apellido) AS Nombre, Telefono, Email, Estado, NombreSucursal, NombreCiudad, p.DescripcionPuesto
-                    FROM `Empleados` e
-                    INNER JOIN `Sucursales` s
+            $sql = "SELECT IdEmpleado, CONCAT(Nombre, ' ', Apellido) AS Nombre, Identidad, Telefono, NombreSucursal, p.DescripcionPuesto
+                    FROM Empleados e
+                    INNER JOIN Sucursales s
                     ON e.Sucursales_IdSucursal = s.IdSucursal  
-                    INNER JOIN `Ciudades` c 
-                    ON  s. Ciudades_IdCiudad = c. IdCiudad 
-                    INNER JOIN `Puestos` p
-                    ON e.Puestos_IdPuesto = p.IdPuesto;";
+                    INNER JOIN Puestos p
+                    ON e.Puestos_IdPuesto = p.IdPuesto";
 
             foreach ($this->db->query($sql) as $res) {
                 $this->empleado[] = $res;
@@ -39,12 +37,13 @@
         public function serchEmployees($id) {
 
             self::setNames();
-            $sql = "SELECT IdEmpleado, Nombre,  Apellido, Telefono, Email, NombreSucursal, NombreCiudad
-                    FROM `Empleados` INNER JOIN Sucursales s
-                    ON Empleados.Sucursales_IdSucursal = s.IdSucursal
-                    INNER JOIN Ciudades c 
-                    ON  s. Ciudades_IdCiudad = c. IdCiudad
-                    WHERE idEmpleado = $id";
+            $sql = "SELECT IdEmpleado, CONCAT(Nombre, ' ', Apellido) AS Nombre, Identidad, Telefono, NombreSucursal, p.DescripcionPuesto
+                    FROM Empleados e
+                    INNER JOIN Sucursales s
+                    ON e.Sucursales_IdSucursal = s.IdSucursal  
+                    INNER JOIN Puestos p
+                    ON e.Puestos_IdPuesto = p.IdPuesto
+                    WHERE IdEmpleado = $id";
             foreach ($this->db->query($sql) as $res) {
                 $this->empleado[] = $res;
             }
@@ -53,11 +52,11 @@
         }
 
         //GUARDAR EMPLEADOS
-        public function setEmployees($Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
+        public function setEmployees($Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto, $Identidad){
 
             self::setNames();
-            $sql = "INSERT INTO Empleados( Nombre, Apellido, Telefono, Direccion, Email, FechaContratacion, Estado, Sucursales_IdSucursal, Puestos_IdPuesto) 
-                    VALUES ( '$Nombre', '$Apellido', '$Telefono', '$Direccion', '$Email', '$FechaContratacion' , '$Estado' , $Sucursales_IdSucursal, $Puestos_IdPuesto)";
+            $sql = "INSERT INTO Empleados( Nombre, Apellido, Telefono, Direccion, Email, FechaContratacion, Estado, Sucursales_IdSucursal, Puestos_IdPuesto, Identidad) 
+                    VALUES ( '$Nombre', '$Apellido', '$Telefono', '$Direccion', '$Email', '$FechaContratacion' , '$Estado' , $Sucursales_IdSucursal, $Puestos_IdPuesto, '$Identidad')";
             $result = $this->db->query($sql);
     
             if ($result) {

@@ -1,10 +1,9 @@
 <?php include_once('../Controladores/controladorEmpleados.php') ?>
-<?php include_once('../Plantilla/header.php') ?>
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Empleados</h1>
     <p class="mb-4"> Sección de Empleados, donde se mostraran los datos de: Codigo, Nombre y Apellido del Empleado,
-         Email, Nombre de la Sucursal donde labora, Ciudad en donde esta dicha Sucursal y el Puesto que desempeña <a target="_blank"
+         Numero de Telefono para su posterior contacto, Nombre de la Sucursal donde labora y el Puesto que desempeña <a target="_blank"
             href="https://datatables.net"> official DataTables documentation</a>.</p>
 
     <!-- DataTales Example -->
@@ -19,10 +18,9 @@
                         <tr>
                             <th>Código</th>
                             <th>Nombre</th>
-                        <!--<th>Telefono</th>--> 
-                            <th>Email</th>
+                            <th>No. Identidad</th>
+                            <th>Telefono</th>
                             <th>Sucursal</th>
-                            <th>Ciudad</th>
                             <th>Puesto</th>
 
                         </tr>
@@ -37,10 +35,10 @@
                         <tr>
                             <td><?php echo $datosEmpleados[$i]['IdEmpleado'] ?></td>
                             <td><?php echo $datosEmpleados[$i]['Nombre'] ?></td>
-                            <!--<td> echo $datosEmpleados[$i]['Telefono'] </td>-->
-                            <td><?php echo $datosEmpleados[$i]['Email'] ?></td>
+                            <td><?php echo $datosEmpleados[$i]['Identidad'] ?></td>
+                            <td><?php echo $datosEmpleados[$i]['Telefono'] ?></td>
                             <td><?php echo $datosEmpleados[$i]['NombreSucursal'] ?></td>
-                            <td><?php echo $datosEmpleados[$i]['NombreCiudad'] ?></td>
+                            <!--<td> echo $datosEmpleados[$i]['NombreCiudad'] </td>-->
                             <td><?php echo $datosEmpleados[$i]['DescripcionPuesto'] ?></td>
 
                             <td>
@@ -57,5 +55,3 @@
             </div>
         </div>
     </div>
-
-<?php include_once('../Plantilla/footer.php') ?>
