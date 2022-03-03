@@ -16,7 +16,6 @@
         return $modeloClientes-> updateClientes($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN);
     }
 
-    //GUARDAR EMPLEADOS
     function setClientes($Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN){
         
         $modeloClientes = new Empleado();
