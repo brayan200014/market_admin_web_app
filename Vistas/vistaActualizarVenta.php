@@ -1,5 +1,5 @@
 <?php include_once("../Controladores/controladorVenta.php") ?>
-<h1 class="h3 mb-2 text-gray-800">Registro de Ventas</h1>
+<h1 class="h3 mb-2 text-gray-800">Actualizar Venta</h1>
 <form class="needs-validation" novalidate action="" method= "POST" enctype="application/x-www-form-urlencoded" >
 <div class="mb-3">
   <label for="IdCliente" class="form-label">ID del Cliente</label>
@@ -79,6 +79,6 @@
 </div>
 </div>
 <div class="d-flex justify-content-center"><button type="button" id="Agregar" onclick="agregarFila()" class="btn btn-outline-primary btn-sm">Agregar fila detalle</button></div>
-<div class="d-flex justify-content-end"><button class="btn btn-primary" type= "submit" onclick="<?php validarDatosVentas() ?>" >Agregar Venta</button></div> <br>
+<div class="d-flex justify-content-end"><button class="btn btn-primary" type= "submit" onclick="" >Actualizar Venta</button></div> <br>
  </form>
  

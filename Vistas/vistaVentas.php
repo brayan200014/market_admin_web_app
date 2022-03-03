@@ -55,11 +55,11 @@
                                         <td><?php echo $ventasRegistradas[$i]['ISV'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['Total'] ?></td>
                                         <td> <button class="btn btn-primary btn-sm" type="submit"><i class="fas fa-eye"></i></button>
-                                              <button class="btn btn-primary btn-sm" type="submit"><i class="fas fa-pen"></i></button>
+                                              <button class="btn btn-primary btn-sm" type="submit" onclick="getVentaEditar(<?php echo $ventasRegistradas[$i]['IdVenta'] ?>)"><i class="fas fa-pen"></i></button>
                                             
                                         </tr>
                                        
                                        <?php  } ?>
-                                            
+
                                     </tbody>
                                 </table>

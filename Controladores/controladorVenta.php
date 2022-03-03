@@ -18,7 +18,8 @@
         $ventas= $modeloVenta->getVentas();
         return $ventas;
     }
-    
+
+  
    
 
     function setGuardarVentaEnviada() {
