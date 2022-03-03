@@ -4,22 +4,31 @@
         $modeloClientes = new cliente();
         return $modeloClientes->obtenerClientes();
     }
+?>
+<?php
 
-    function deleteClientes($id){
-        $modeloClientes = new cliente();
-        return $modeloClientes->deleteClientes($id);
-    }
+        function obtenerClientes(){
+            require_once('../Modelos/modeloClientes.php');
+            $cliente = new cliente();
+            return 
+        }
 
-    function updateClientes($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $RTN){
-            
-        $modeloClientes=new Empleado();
-        return $modeloClientes-> updateClientes($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN);
-    }
-
-    function setClientes($Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN){
-        
-        $modeloClientes = new Empleado();
-        return $modeloClientes -> setClientes($Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN);
-    }
+        function deleteClientes($id){
+            require_once('../Modelos/modeloClientes.php');
+            $Clientes = new cliente();
+            return $Clientes->deleteClientes($id);
+        }
+    
+        function updateClientes($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $RTN){
+            require_once('../Modelos/modeloClientes.php');
+            $Clientes=new Empleado();
+            return $Clientes-> updateClientes($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN);
+        }
+    
+        function setClientes($Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN){
+            require_once('../Modelos/modeloClientes.php');
+            $Clientes = new Empleado();
+            return $Clientes -> setClientes($Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN);
+        }
 ?>
 
