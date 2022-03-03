@@ -65,6 +65,8 @@
     <script src="../Plantilla/js/demo/chart-pie-demo.js"></script>
     <script src="../Plantilla/js/demo/datatables-demo.js"></script><!--NEW-->
 
+    <script src="../Plantilla/js/productos/tablaProductos.js"></script><!--NEW-->
+
 </body>
 
 </html>

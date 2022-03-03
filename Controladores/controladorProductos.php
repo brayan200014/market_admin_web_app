@@ -5,7 +5,7 @@
         return $modeloProducto->getProductos();
     }
 
-    function listarCatgeroias(){
+    function listarCategorias(){
         $modeloProducto = new Producto();
         return $modeloProducto->getCategorias();
     }

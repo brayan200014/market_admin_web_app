@@ -36,7 +36,7 @@
                 <select class="form-control" id="categoria">
                     <option selected>Elija una categoria</option>
                     <?php
-                        $datosCategorias = listarCatgeroias();
+                        $datosCategorias = listarCategorias();
 
                         for($i = 0; $i < sizeof($datosCategorias); $i++){
                     ?>

@@ -37,8 +37,12 @@
                                 <td><?php echo $datosProductos[$i]['DescripcionProducto'] ?></td>
                                 <td><?php echo $datosProductos[$i]['NombreCategoria'] ?></td>
                                 <td>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inventoryModal"><i class="fas fa-eye"></i></button>
-                                    <button class="btn btn-primary" type="submit"><i class="fas fa-pen"></i></button>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inventoryModal" data-whatever="2">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#editModal" data-whatever="1">
+                                        <i class="fas fa-pen"></i>
+                                    </button>
                                     <button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button>
                                 </td>
                             </tr>
@@ -62,20 +66,96 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <h5 class="modal-subtitle"></h5>
                     <form>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <label for="recipient-name" class="col-form-label">Sucursal:</label>
+                            <select class="form-control" id="categoria">
+
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <label for="existencia" class="col-form-label">Existencia:</label>
+                            <input type="text" class="form-control" id="existencia">
+                        </div>
+                        <div class="form-group">
+                            <label for="precio" class="col-form-label">Precio:</label>
+                            <input type="text" class="form-control" id="precio">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal para ver editar un producto-->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Editar producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="modal-subtitle"></h5>
+                    <form class="g-3 needs-validation" novalidate>
+                        <div class="m-4 position-relative">
+                            <label for="nombre" class="form-label">Nombre del producto</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">¡Campo válido!</div>
+                            <div class="invalid-tooltip">Campo no valido.</div>
+                        </div>
+                        <div class="m-4 position-relative">
+                            <label for="descripcion" class="form-label">Descripción</label>
+                            <input type="text" class="form-control" id="descripcion" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">¡Campo válido!</div>
+                            <div class="invalid-tooltip">Campo no valido.</div>
+                        </div>
+                        <div class="m-4 position-relative">
+                            <label for="isv" class="form-label">ISV</label>
+                            <input type="text" class="form-control" id="isv" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip"></div>
+                            <div class="invalid-tooltip">Campo no valido.</div>
+                        </div>
+                        <div class="m-4 position-relative">
+                            <label for="urlimagen" class="form-label">URL Imagen</label>
+                            <input type="text" class="form-control" id="urlimagen" required>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">¡Campo válido!</div>
+                            <div class="invalid-tooltip">Campo no valido.</div>
+                        </div>
+                        <div class="m-4 position-relative">
+                            <label for="categoria" class="form-label" required>Categoria</label>
+                            <select class="form-control" id="categoria">
+                                <option selected>Elija una categoria</option>
+                                <?php
+                                    $datosCategorias = listarCategorias();
+
+                                    for($i = 0; $i < sizeof($datosCategorias); $i++){
+                                ?>
+                                    <option value="<?php echo $datosCategorias[$i]['IdCategoria'] ?>"><?php echo $datosCategorias[$i]['NombreCategoria'] ?></option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                            <!-- Mensajes para validación   -->
+                            <div class="valid-tooltip">¡Campo válido!</div>
+                            <div class="invalid-tooltip">Campo no valido.</div>
+                        </div>                  
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
