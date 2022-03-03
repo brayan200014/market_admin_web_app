@@ -4,6 +4,7 @@
 
         private $sucursal;
         private $db;
+        private $ciudad;
 
         public function __construct() {
             $this->sucursal = array();
@@ -19,7 +20,7 @@
 
             self::setNames();
 
-            $sql = " SELECT IdSucursal, NombreSucursal, Direccion, NombreCiudad
+            $sql = "SELECT IdSucursal, NombreSucursal, Direccion, NombreCiudad
                     FROM Sucursales s
                     INNER JOIN Ciudades c
                     ON s.Ciudades_IdCiudad = c.IdCiudad";
@@ -35,13 +36,11 @@
         public function buscarSucursal($id) {
 
             self::setNames();
-            $sql = "SELECT IdEmpleado, CONCAT(Nombre, ' ', Apellido) AS Nombre, Identidad, Telefono, NombreSucursal, p.DescripcionPuesto
-                    FROM Empleados e
-                    INNER JOIN Sucursales s
-                    ON e.Sucursales_IdSucursal = s.IdSucursal  
-                    INNER JOIN Puestos p
-                    ON e.Puestos_IdPuesto = p.IdPuesto
-                    WHERE idEmpleado = $id";
+            $sql = "SELECT IdSucursal, NombreSucursal, Direccion, NombreCiudad
+                    FROM Sucursales s
+                    INNER JOIN Ciudades c
+                    ON s.Ciudades_IdCiudad = c.IdCiudad
+                    WHERE idSucursal = $id";
             foreach ($this->db->query($sql) as $res) {
                 $this->sucursal[] = $res;
             }
@@ -50,11 +49,11 @@
         }
 
         //GUARDAR SUCURSAL
-        public function GuardarSucursal($Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
+        public function GuardarSucursal($NombreSucursal, $Direccion, $Ciudades_IdCiudad){
 
             self::setNames();
-            $sql = "INSERT INTO Empleados( Nombre, Apellido, Telefono, Direccion, Email, FechaContratacion, Estado, Sucursales_IdSucursal, Puestos_IdPuesto) 
-                    VALUES ( '$Nombre', '$Apellido', '$Telefono', '$Direccion', '$Email', '$FechaContratacion' , '$Estado' , $Sucursales_IdSucursal, $Puestos_IdPuesto)";
+            $sql = "INSERT INTO Sucursales( NombreSucursal, Direccion, Ciudades_IdCiudad) 
+                    VALUES ('$NombreSucursal', $Direccion, '$Ciudades_IdCiudad')";
             $result = $this->db->query($sql);
     
             if ($result) {
@@ -68,21 +67,21 @@
 
             self::setNames();
 
-            $sql = "SELECT * FROM Puestos";
+            $sql = "SELECT * FROM Ciudades";
 
             foreach ($this -> db -> query($sql) as $result){
-                $this -> sucursal[] = $result;
+                $this -> ciudad[] = $result;
             }
 
-            return $this -> sucursal;
+            return $this -> ciudad;
             $this -> db -> null;
         }
 
         //ELIMINAR SUCURSALES
-        public function deleteEmployees($id) {
+        public function deleteSucursales($id) {
 
             self::setNames();
-            $sql = "DELETE FROM Empleados WHERE IdEmpleado = $id";
+            $sql = "DELETE FROM Sucursales WHERE IdSucursal = $id";
             $result = $this->db->query($sql);
     
             if ($result) {
@@ -93,20 +92,14 @@
         }
 
         //ACTUALIZAR SUCURSALES
-        public function UpdateEmployees($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
+        public function UpdateSucursales($id, $NombreSucursal, $Direccion, $Ciudades_IdCiudad){
             self::setNames();
     
-            $sql="UPDATE empleados SET 
-            Nombre='$Nombre',
-            Apellido='$Apellido',
-            Telefono='$Telefono',
+            $sql="UPDATE Sucursales SET 
+            NombreSucursal='$NombreSucursal',
             Direccion='$Direccion',
-            Email='$Email',
-            FechaContratacion='$FechaContratacion',
-            Estado='$Estado',
-            Sucursales_IdSucursal='$Sucursales_IdSucursal',
-            Puestos_IdPuesto='$Puestos_IdPuesto',
-            WHERE IdEmpleado='$id'";
+            Ciudades_IdCiudad='$Ciudades_IdCiudad',
+            WHERE IdSucursal='$id'";
     
             $result=$this->db->query($sql);
             if($result){

@@ -4,6 +4,8 @@
 
         private $empleado;
         private $db;
+        private $puesto;
+        private $sucursal;
 
         public function __construct() {
             $this->empleado = array();
@@ -52,11 +54,11 @@
         }
 
         //GUARDAR EMPLEADOS
-        public function setEmployees($Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto, $Identidad){
+        public function setEmployees($Nombre, $Apellido, $Identidad, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
 
             self::setNames();
-            $sql = "INSERT INTO Empleados( Nombre, Apellido, Telefono, Direccion, Email, FechaContratacion, Estado, Sucursales_IdSucursal, Puestos_IdPuesto, Identidad) 
-                    VALUES ( '$Nombre', '$Apellido', '$Telefono', '$Direccion', '$Email', '$FechaContratacion' , '$Estado' , $Sucursales_IdSucursal, $Puestos_IdPuesto, '$Identidad')";
+            $sql = "INSERT INTO Empleados( Nombre, Apellido, Identidad, Telefono, Direccion, Email, FechaContratacion, Estado, Sucursales_IdSucursal, Puestos_IdPuesto) 
+                    VALUES ( '$Nombre', '$Apellido', '$Identidad', '$Telefono', '$Direccion', '$Email', '$FechaContratacion' , '$Estado' , $Sucursales_IdSucursal, $Puestos_IdPuesto)";
             $result = $this->db->query($sql);
     
             if ($result) {
@@ -73,10 +75,26 @@
             $sql = "SELECT * FROM Puestos";
 
             foreach ($this -> db -> query($sql) as $result){
-                $this -> empleado[] = $result;
+                $this -> puesto[] = $result;
             }
 
-            return $this -> empleado;
+            return $this -> puesto;
+            $this -> db -> null;
+        }
+
+
+         //LLENADO DE COMBOBOX SUCURSALES DESDE LA BD
+         public function ObtenerSucursal(){
+
+            self::setNames();
+
+            $sql = "Select IdSucursal, NombreSucursal from Sucursales;";
+
+            foreach ($this -> db -> query($sql) as $result){
+                $this -> sucursal[] = $result;
+            }
+
+            return $this -> sucursal;
             $this -> db -> null;
         }
 

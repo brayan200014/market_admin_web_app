@@ -4,4 +4,9 @@
        $modeloSucursal = new Sucursal();
        return $modeloSucursal-> ObtenerSucursal();
    }
+
+   function listarCiudades(){
+    $modeloSucursal = new Sucursal();
+    return $modeloSucursal->ObtenerCiudades();
+}
 ?>

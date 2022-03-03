@@ -1,57 +1,39 @@
 <?php
-      include_once('../Modelos/modeloEmpleados.php');
-       function listarEmpleados(){
-       $modeloEmpleados = new Empleado();
-       return $modeloEmpleados->ObtenerEmployees();
-   }
-?>
 
-<?php
-    class controladorEmpleado{
-        public function __construct(){
-        }
-
-        //FUNCIÓN OBTENER PUESTOS EMPLEADOS
-        function ObtenerPuestos(){
-
-            require_once("../Modelos/modeloEmpleados.php");
-            $empleado = new Empleado();
-            $datos = $empleado -> ObtenerPuestos();
-            return $datos;
-        }
-
-        //FUNCIÓN OBTENER EMPLEADOS
-         function ObtenerEmployees(){
-
-            require_once("../Modelos/modeloEmpleados.php");
-            $empleado = new Empleado();
-             return $empleado -> ObtenerEmployees();
-        }
-        
-        //FUNCIÓN ELIMINAR EMPLEADOS
-        function deleteEmployees($id){
-            
-            require_once("../Modelos/modeloEmpleados.php");
-            $empleado = new Empleado();
-            return $empleado -> deleteEmployees($id);
-        }
-
-        //FUNCIÓN ACTUALIZAR EMPLEADOS
-        function UpdateEmployees($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
-            
-            require_once("../Modelos/modeloEmpleados.php");
-            $empleado=new Empleado();
-            return $empleado-> UpdateEmployees($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto);
-        }
-
-        //GUARDAR EMPLEADOS
-        function setEmployees($Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
-            
-            require_once("../Modelos/modeloEmpleados.php");
-            $empleado = new Empleado();
-            return $empleado -> setEmployees($Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto);
-        }
-
-
+    include_once('../Modelos/modeloEmpleados.php');
+    function listarEmpleados()
+    {
+    $modeloEmpleados = new Empleado();
+    return $modeloEmpleados->ObtenerEmployees();
     }
+
+    function listarSucursales(){
+        $modeloEmpleados = new Empleado();
+        return $modeloEmpleados->ObtenerSucursal();
+    }
+
+    function listarPuestos(){
+        $modeloEmpleados = new Empleado();
+        return $modeloEmpleados->ObtenerPuestos();
+    }
+
+    //GUARDAR EMPLEADOS
+    function setEmployees(){
+            
+        require_once("../Modelos/modeloEmpleados.php");
+        $modeloEmpleados= new Empleado();
+        $modeloEmpleados->Nombre = $_POST['Nombre'];
+        $modeloEmpleados->Apellido = $_POST['Apellido'];
+        $modeloEmpleados->Identidad = $_POST['Identidad'];
+        $modeloEmpleados->Telefono = $_POST['Telefono'];
+        $modeloEmpleados->Direccion = $_POST['Direccion'];
+        $modeloEmpleados->Email = $_POST['Email'];
+        $modeloEmpleados->FechaContratacion = $_POST['FechaContratacion'];
+        $modeloEmpleados->Estado = $_POST['Estado'];
+        $modeloEmpleados->Sucursales_IdSucursal = $_POST['Sucursales_IdSucursal'];
+        $modeloEmpleados->Puestos_IdPuesto = $_POST['Puestos_IdPuesto'];  
+
+        return $modeloempleado -> setEmployees($Nombre, $Apellido, $Identidad, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto);
+    }
+
 ?>
