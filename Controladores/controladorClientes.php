@@ -10,7 +10,7 @@
         function obtenerClientes(){
             require_once('../Modelos/modeloClientes.php');
             $cliente = new cliente();
-            return 
+            return;
         }
 
         function deleteClientes($id){

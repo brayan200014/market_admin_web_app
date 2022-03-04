@@ -1,4 +1,4 @@
-<?php include_once("../Controladores/controladorCliente.php") ?>
+<?php include_once("../Controladores/controladorClientes.php") ?>
 
 <h1 class="h3 mb-2 text-gray-800">Registro del Cliente</h1>
 
@@ -25,11 +25,10 @@
 </div>
 
 <div class="mb-3">
-  <label for="direccion" class="form-label">Direccion</label>
-  <textarea name="direccion" id="direccion" placeholder="Ingrede la direccion"></textarea>
+  <label for="direccion" class="form-label">Direccion</label><br>
+  <textarea name="direccion" cols="40" rows="5" id="direccion" placeholder="Ingrese la direccion"></textarea>
 </div>
 
-//
 <div class="mb-3">
   <label for="correo" class="form-label">Email</label>
   <input type="text" class="form-control" id="correo" name="correo" placeholder="Ingrese el correo del cliente">
