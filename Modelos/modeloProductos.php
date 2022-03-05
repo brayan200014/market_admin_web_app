@@ -33,9 +33,7 @@
         public function serchProducto($id) {
 
             self::setNames();
-            $sql = "SELECT IdProducto, NombreProducto, DescripcionProducto, ISV, Imagen, Estado, c.NombreCategoria
-                    FROM Productos p INNER JOIN Categorias c
-                    WHERE p.Categorias_IdCategoria = c.IdCategoria AND IdProducto = $id";
+            $sql = "SELECT * FROM Productos WHERE IdProducto = $id";
             foreach ($this->db->query($sql) as $res) {
                 $this->producto[] = $res;
             }
