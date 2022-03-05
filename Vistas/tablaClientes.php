@@ -22,8 +22,6 @@ include_once('../Controladores/controladorClientes.php')
                             <th>Identidad</th>
                             <th>Telefono</th>
                             <th>Correo</th>
-                            <th>RTN</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -37,8 +35,6 @@ include_once('../Controladores/controladorClientes.php')
                             <td><?php echo $datosClientes[$i]['Identidad'] ?></td>
                             <td><?php echo $datosClientes[$i]['Telefono'] ?></td>
                             <td><?php echo $datosClientes[$i]['Email'] ?></td>
-                            <td><?php echo $datosClientes[$i]['RTN'] ?></td>
-
                             <td>
                                     <button class="btn btn-primary" type="submit"><i class="fas fa-eye"></i></button>
                                     <button class="btn btn-primary" type="submit"><i class="fas fa-pen"></i></button>

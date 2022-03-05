@@ -1,49 +1,68 @@
 <?php include_once("../Controladores/controladorClientes.php") ?>
+<div class="p-5">
+  <h1 class="h3 mb-2 text-gray-800">Registro del Cliente</h1>
+  <form class="needs-validation" novalidate action="" method= "POST" enctype="application/x-www-form-urlencoded" >
+  
+  <div class="m-4 position-relative">
+    <label for="txt1" class="form-label">ID del cliente:</label>
+    <input type="text" class="form-control" id="txt1" name="txt1" placeholder="Ingrese el id del cliente" required>
+    <!-- Mensajes para validación   -->
+    <div class="valid-tooltip">¡Campo válido!</div>
+    <div class="invalid-tooltip">Campo no valido.</div>
+  </div>
 
-<h1 class="h3 mb-2 text-gray-800">Registro del Cliente</h1>
+  <div class="m-4 position-relative">
+    <label for="txt2" class="form-label">Nombre del cliente:</label>
+    <input type="text" class="form-control" id="txt2" name="txt2" placeholder="Nombre del cliente" required>
+    <!-- Mensajes para validación   -->
+    <div class="valid-tooltip">¡Campo válido!</div>
+    <div class="invalid-tooltip">Campo no valido.</div>
+  </div>
 
-<form action="" method= "POST" enctype="application/x-www-form-urlencoded" >
+  <div class="m-4 position-relative">
+    <label for="txt3" class="form-label">Apellido del cliente:</label>
+    <input type="text" class="form-control" id="txt3" name="txt3" placeholder="Apellido del cliente" required>
+    <!-- Mensajes para validación   -->
+    <div class="valid-tooltip">¡Campo válido!</div>
+    <div class="invalid-tooltip">Campo no valido.</div>
+  </div>
 
-<div class="mb-3">
-  <label for="IdCliente" class="form-label">ID del Cliente</label>
-  <input type="text" class="form-control" id="IdCliente" name="IdCliente" placeholder="Ingrese el id del cliente">
+  <div class="m-4 position-relative">
+    <label for="txt4" class="form-label"># de identidad del cliente:</label>
+    <input type="text" class="form-control" id="txt4" name="txt4" placeholder="# identidad del cliente" required>
+    <!-- Mensajes para validación   -->
+    <div class="valid-tooltip">¡Campo válido!</div>
+    <div class="invalid-tooltip">Campo no valido.</div>
+  </div>
+
+  <div class="m-4 position-relative">
+    <label for="txt5" class="form-label">Dirección del cliente:</label>
+    <input type="text" class="form-control" id="txt5" name="txt5" placeholder="Direccion del cliente" required>
+    <!-- Mensajes para validación   -->
+    <div class="valid-tooltip">¡Campo válido!</div>
+    <div class="invalid-tooltip">Campo no valido.</div>
+  </div>
+
+  <div class="m-4 position-relative">
+    <label for="txt6" class="form-label">Correo del cliente:</label>
+    <input type="text" class="form-control" id="txt6" name="txt6" placeholder="Correo del cliente" required>
+    <!-- Mensajes para validación   -->
+    <div class="valid-tooltip">¡Campo válido!</div>
+    <div class="invalid-tooltip">Campo no valido.</div>
+  </div>
+
+  <div class="m-4 position-relative">
+    <label for="txt7" class="form-label">RTN del cliente:</label>
+    <input type="text" class="form-control" id="txt7" name="txt7" placeholder="RTN del cliente" required>
+    <!-- Mensajes para validación   -->
+    <div class="valid-tooltip">¡Campo válido!</div>
+    <div class="invalid-tooltip">Campo no valido.</div>
+  </div>
+
+
+
+  <div class="row m-4">
+      <button class="btn btn-warning fw-bold float-end" type="submit" name="insertarCliente">Guardar</button>
+  </div>
+  </form>
 </div>
-
-<div class="mb-3">
-  <label for="Nombre" class="form-label">Nombre del cliente</label>
-  <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Ingrese el nombre del cliente">
-</div>
-
-<div class="mb-3">
-  <label for="Apellido" class="form-label">Apellido</label>
-  <input type="text" class="form-control" id="Apellido" name="Apellido" placeholder="Ingrese el apellido del cliente">
-</div>
-
-<div class="mb-3">
-  <label for="Tel" class="form-label">Telefono</label>
-  <input type="text" class="form-control" id="Tel" name="Tel" placeholder="Ingrese el Telefono">
-</div>
-
-<div class="mb-3">
-  <label for="direccion" class="form-label">Direccion</label><br>
-  <textarea name="direccion" cols="40" rows="5" id="direccion" placeholder="Ingrese la direccion"></textarea>
-</div>
-
-<div class="mb-3">
-  <label for="correo" class="form-label">Email</label>
-  <input type="text" class="form-control" id="correo" name="correo" placeholder="Ingrese el correo del cliente">
-</div>
-
-<div class="mb-3">
-  <label for="iden" class="form-label">Identidad</label>
-  <input type="text" class="form-control" id="iden" name="iden" placeholder="Ingrese la identidad del cliente">
-</div>
-
-<div class="mb-3">
-  <label for="RTN" class="form-label">RTN</label>
-  <input type="text" class="form-control" id="RTN" name="RTN" placeholder="Ingrese el RTN">
-</div>
-
-<div class="d-flex justify-content-center"><button type="button" id="Agregar" onclick="agregarFila()" class="btn btn-outline-primary btn-sm">Agregar fila detalle</button></div>
-<div class="d-flex justify-content-end"><button class="btn btn-primary" type= "submit" onclick="<?php validarDatosVentas() ?>" >Agregar Venta</button></div> <br>
- </form>
