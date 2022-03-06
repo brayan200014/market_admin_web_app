@@ -2,7 +2,7 @@
 
 <div class="p-5">
     <h1 class="h3 m-4 text-gray-800">Agregar producto</h1>
-    <form class="g-3 needs-validation" action="../Controladores/insertarProducto.php" method="POST" novalidate>
+    <form class="g-3 needs-validation" action="../Controladores/controladorProductos.php" method="POST" novalidate>
         <div class="m-4 position-relative">
             <label for="nombre" class="form-label">Nombre del producto</label>
             <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -50,7 +50,8 @@
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>                  
         <div class="row m-4">
-            <button class="btn btn-warning fw-bold float-end" type="submit" name="insertarProducto">Guardar</button>
+            <button class="btn btn-warning fw-bold float-end mr-3" type="submit" name="insertarProducto">Guardar</button>
+            <a class="btn btn-secondary fw-bold float-end" href="../Vistas/tablaProductos.php">Cancelar</a>
         </div>
     </form>
 </div>

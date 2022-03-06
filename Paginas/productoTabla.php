@@ -4,7 +4,7 @@
 <h1 class="h3 mb-2 text-gray-800">Productos</h1>
 <p class="mb-4">Aquí prodras ver toda la informacion relacionada con los productos, asi como agregar, editar o eliminar un producto. 
     Para ver el inventario de un producto en cada sucursal solo debes precionar el ojo en la sección de opciones.
-    <a href="../Paginas/productoFormulario.php">¡Agrega un nuevo producto!</a>.</p>
+    <a href="../Vistas/agregarProducto.php">¡Agrega un nuevo producto!</a>.</p>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -39,10 +39,10 @@
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inventoryModal" data-whatever="2">
                                     <i class="fas fa-eye"></i>
                                 </button>
-                                <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#editModal" data-whatever="1">
+                                <a class="btn btn-primary" href="../Vistas/editarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
                                     <i class="fas fa-pen"></i>
-                                </button>
-                                <button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </a>
+                                <button class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
                     <?php
