@@ -12,4 +12,19 @@
         return $modeloUsuario->buscarUsuario($id);
     }
 
+    function cambiarContrasena($id, $clave){
+        $modeloUsuario = new Usuario();
+        return $modeloUsuario->modificarUsuario($id, $clave);
+    }
+
+    if (isset($_POST['modificarUsuario'])) {
+        $id = $_GET['id'];
+        $clave = $_POST['clave'];
+
+        if(cambiarContrasena($id, $clave)){
+            
+        }
+        
+    }
+
 ?>
