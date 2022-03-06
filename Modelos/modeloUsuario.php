@@ -6,7 +6,7 @@
 
         public function __construct() {
             $this->usuario = array();
-            $this->db = new PDO('mysql:host=localhost;dbname=medi', "movil1301", "Movil$1301");
+            $this->db = new PDO('mysql:host=34.224.30.50;dbname=BasePortales', "proyectoportales2", "proyectoportales2");
         }
 
         private function setNames() {
@@ -41,6 +41,19 @@
         public function buscarUsuario($id){
             self::setNames();
             $sql = "SELECT * FROM Usuarios WHERE IdUsuario = $id";
+            $result = $this->db->query($sql);
+
+            foreach ($this->db->query($sql) as $res) {
+                $this->usuario[] = $res;
+            }
+            return $this->usuario;
+            $this->db = null;
+        }
+
+        public function verificarUsuario($usuario, $contrasena){
+            self::setNames();
+            $sql = "SELECT * FROM Usuarios 
+                    WHERE NombreUsuario = '$usuario' AND Contrasena = '$contrasena'";
             $result = $this->db->query($sql);
 
             foreach ($this->db->query($sql) as $res) {

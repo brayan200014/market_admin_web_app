@@ -1,3 +1,40 @@
+<?php
+
+include_once('../Controladores/controladorUsuario.php');
+
+$alert = '';
+session_start();
+if(!empty($_SESSION['active'])){
+    header('location: ../Vistas/prueba.php');
+}
+else{
+    if(!empty($_POST)){
+        if(empty($_POST['usuario']) || empty($_POST['clave'])){
+            $alert = 'Ingrese su nombre y su usuario';
+        }
+        else{
+            $user = $_POST['usuario'];
+            $pass = $_POST['clave'];
+
+            $datos = iniciarSesion($user, $pass);
+
+            if(sizeof($datos) > 0){
+                $_SESSION['active'] = true;
+                $_SESSION['idUsuario'] = $datos[0]['IdUsuario'];
+                $_SESSION['nombreUsuario'] = $datos[0]['NombreUsuario'];
+
+                header('location: ../Vistas/prueba.php');
+            }
+            else{
+                $alert = 'El usuario o la clave son incorrectos';
+                session_destroy();
+            }
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,23 +76,21 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">¡Inicia sesión!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">¡Iniciar sesión!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="" method="POST">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Ingresa tu correo electronico">
+                                            <input type="text" class="form-control form-control-user"
+                                                id="usuario" name="usuario" placeholder="Ingresa tu nombre de usuario">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Contraseña">
+                                                id="clave" name="clave" placeholder="Contraseña">
+                                        </div>
+                                        <div class="alert text-danger">
+                                            <?php echo isset($alert) ? $alert : ''; ?>
                                         </div>
                                         <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Recuerdame</label>
-                                            </div>
                                         </div>
                                         <input type="submit" class="btn btn-primary btn-user btn-block" value="Ingresar">
                                     </form>
