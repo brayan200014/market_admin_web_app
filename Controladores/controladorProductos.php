@@ -26,6 +26,12 @@
         return $modeloProducto->serchProducto($id);
     }
 
+    function deshabilitarProducto($id){
+        $modeloProducto = new Producto();
+        return $modeloProducto->deleteProducto($id);
+    }
+
+    //Recibe la petición de insertar un nuevo producto
     if (isset($_POST['insertarProducto'])) {
         $nombre = $_POST['nombre'];
         $descripcion = $_POST['descripcion'];
@@ -38,6 +44,7 @@
         }
     }
 
+    //Recibe la petición de modificar un producto
     if (isset($_POST['modificarProducto'])) {
         $id = $_POST['id'];
         $nombre= $_POST['nombre'];

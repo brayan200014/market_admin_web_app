@@ -42,7 +42,9 @@
                                 <a class="btn btn-primary" href="../Vistas/editarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <button class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
+                                <a class="btn btn-danger" href="../Controladores/eliminarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
                             </td>
                         </tr>
                     <?php
@@ -81,75 +83,6 @@
                         <label for="precio" class="col-form-label">Precio:</label>
                         <input type="text" class="form-control" id="precio">
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Guardar cambios</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Modal para ver editar un producto-->
-<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Editar producto</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h5 class="modal-subtitle"></h5>
-                <form class="g-3 needs-validation" novalidate>
-                    <div class="m-4 position-relative">
-                        <label for="nombre" class="form-label">Nombre del producto</label>
-                        <input type="text" class="form-control" id="nombre" required>
-                        <!-- Mensajes para validación   -->
-                        <div class="valid-tooltip">¡Campo válido!</div>
-                        <div class="invalid-tooltip">Campo no valido.</div>
-                    </div>
-                    <div class="m-4 position-relative">
-                        <label for="descripcion" class="form-label">Descripción</label>
-                        <input type="text" class="form-control" id="descripcion" required>
-                        <!-- Mensajes para validación   -->
-                        <div class="valid-tooltip">¡Campo válido!</div>
-                        <div class="invalid-tooltip">Campo no valido.</div>
-                    </div>
-                    <div class="m-4 position-relative">
-                        <label for="isv" class="form-label">ISV</label>
-                        <input type="text" class="form-control" id="isv" required>
-                        <!-- Mensajes para validación   -->
-                        <div class="valid-tooltip"></div>
-                        <div class="invalid-tooltip">Campo no valido.</div>
-                    </div>
-                    <div class="m-4 position-relative">
-                        <label for="urlimagen" class="form-label">URL Imagen</label>
-                        <input type="text" class="form-control" id="urlimagen" required>
-                        <!-- Mensajes para validación   -->
-                        <div class="valid-tooltip">¡Campo válido!</div>
-                        <div class="invalid-tooltip">Campo no valido.</div>
-                    </div>
-                    <div class="m-4 position-relative">
-                        <label for="categoria" class="form-label" required>Categoria</label>
-                        <select class="form-control" id="categoria">
-                            <option selected>Elija una categoria</option>
-                            <?php
-                                $datosCategorias = listarCategorias();
-
-                                for($i = 0; $i < sizeof($datosCategorias); $i++){
-                            ?>
-                                <option value="<?php echo $datosCategorias[$i]['IdCategoria'] ?>"><?php echo $datosCategorias[$i]['NombreCategoria'] ?></option>
-                            <?php
-                                }
-                            ?>
-                        </select>
-                        <!-- Mensajes para validación   -->
-                        <div class="valid-tooltip">¡Campo válido!</div>
-                        <div class="invalid-tooltip">Campo no valido.</div>
-                    </div>                  
                 </form>
             </div>
             <div class="modal-footer">

@@ -21,7 +21,7 @@
             self::setNames();
             $sql = "SELECT IdProducto, NombreProducto, DescripcionProducto, ISV, Imagen, Estado, c.NombreCategoria
                     FROM Productos p INNER JOIN Categorias c
-                    WHERE p.Categorias_IdCategoria = c.IdCategoria";
+                    WHERE p.Categorias_IdCategoria = c.IdCategoria AND p.Estado = true";
             foreach ($this->db->query($sql) as $res) {
                 $this->producto[] = $res;
             }
@@ -53,6 +53,7 @@
             $this->db = null;
         }
 
+        //Ingresa un producto a la base de datos
         public function setProductos($nombre, $descripcion, $isv, $img, $estado, $categoriaId) {
 
             self::setNames();
@@ -67,6 +68,7 @@
             }
         }
 
+        //Modifica un producto en la base de datos
         public function updateProducts($id, $nombre, $descripcion, $isv, $img, $estado, $categoriaId){
             self::setNames();
             $sql = "UPDATE Productos SET NombreProducto = '$nombre' , DescripcionProducto = '$descripcion', ISV = $isv, Imagen = '$img', Estado = $estado, Categorias_IdCategoria = $categoriaId WHERE IdProducto = $id";
@@ -79,10 +81,11 @@
             }
         }
 
+        //Deshabilita un producto en la base de datos
         public function deleteProducto($id) {
 
             self::setNames();
-            $sql = "DELETE FROM Productos WHERE IdProducto = $id";
+            $sql = "UPDATE Productos SET Estado = false WHERE IdProducto = $id";
             $result = $this->db->query($sql);
     
             if ($result) {
