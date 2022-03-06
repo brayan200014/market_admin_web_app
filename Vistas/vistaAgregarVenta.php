@@ -1,5 +1,7 @@
 <?php include_once("../Controladores/controladorVenta.php") ?>
 <h1 class="h3 mb-2 text-gray-800">Registro de Ventas</h1>
+
+
 <form class="needs-validation" novalidate action="" method= "POST" enctype="application/x-www-form-urlencoded" >
 <div class="mb-3">
   <label for="IdCliente" class="form-label">ID del Cliente</label>
@@ -23,7 +25,7 @@
 </div>
 <div class="mb-3">
   <label for="IdUsuario" class="form-label">ID de Usuario</label>
-  <input type="text" class="form-control needs-validation" id="IdUsuario" name="IdUsuario" placeholder="Ingrese el id del Usuario" required pattern="[0-9]+">
+  <input type="text" class="form-control needs-validation" id="IdUsuario" name="IdUsuario" placeholder="Ingrese el id del Usuario" required pattern="[0-9]+"> 
   <div class="valid-feedback">
         Formato Valido
  </div>

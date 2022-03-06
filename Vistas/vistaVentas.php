@@ -44,6 +44,7 @@
                                         <?php
                                             $ventasRegistradas= getVentasRegistradas();
                                             for($i=0; $i < sizeof($ventasRegistradas); $i++ ) {
+                                            $id= $ventasRegistradas[$i]['IdVenta'];
                                         ?>
                                           <tr>  
                                         <td> <?php echo $ventasRegistradas[$i]['IdVenta'] ?></td>
@@ -54,8 +55,8 @@
                                         <td><?php echo $ventasRegistradas[$i]['Subtotal'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['ISV'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['Total'] ?></td>
-                                        <td> <button class="btn btn-primary btn-sm" type="submit"><i class="fas fa-eye"></i></button>
-                                              <button class="btn btn-primary btn-sm" type="submit" onclick="getVentaEditar(<?php echo $ventasRegistradas[$i]['IdVenta'] ?>)"><i class="fas fa-pen"></i></button>
+                                        <td> <a href="../Paginas/actualizarVenta.php?id= <?php echo $ventasRegistradas[$i]['IdVenta'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-eye"></i></a>
+                                        <a href="../Paginas/actualizarVenta.php?id= <?php echo $ventasRegistradas[$i]['IdVenta'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-pen"></i></a>
                                             
                                         </tr>
                                        

@@ -36,46 +36,10 @@ function agregarFila() {
     </div>`
 }
 
-/*function getVentaEditar(venta) {
-  const data= new FormData();
-  data.append('IdVenta', '1');
-  fetch('./actualizarVenta.php', {
-    method: 'POST',
-    body: data
- }).then(function(response) {
-      if(response.ok) {
-        return response.text()
-    } else {
-        throw "Error en la llamada Ajax";
-    }
- }).catch((error) => {
-   console.log(error);
- })
 
- window.location.href= "./actualizarVenta.php"
-  
+function getEditarVenta(posicion) {
+     alert("HOLA");
 }
 
-
-
-function getValoresVentas() {
-
-  
- 
-    alert(arrayVentaEnviado);
-      
-    let venta= new Array(); 
-    venta= arrayVentaEnviado; 
-    let IdCliente= document.getElementById('IdCliente');
-    let IdSucursal= document.getElementById('IdSucursal');
-    let IdUsuario= document.getElementById('IdUsuario');
-    let ISV= document.getElementById('ISV');
-
-    IdCliente.value= venta['IdCliente'];
-    IdSucursal.value= venta['IdSucursal'];
-    IdUsuario.value= venta['IdUsuario'];
-    ISV.value= venta['ISV'];
-  
-}*/
 
 
