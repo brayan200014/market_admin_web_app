@@ -7,4 +7,9 @@
         return $modeloUsuario->verificarUsuario($usuario, $clave);
     }
 
+    function consultarUsuario($id){
+        $modeloUsuario = new Usuario();
+        return $modeloUsuario->buscarUsuario($id);
+    }
+
 ?>
