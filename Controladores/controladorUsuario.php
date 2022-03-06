@@ -18,11 +18,19 @@
     }
 
     if (isset($_POST['modificarUsuario'])) {
-        $id = $_GET['id'];
+        $id = $_POST['id'];
         $clave = $_POST['clave'];
 
         if(cambiarContrasena($id, $clave)){
-            
+            echo "<script>
+                    alert('Usuario modificado con exito');
+                    window.location= '../Vistas/prueba.php';
+                </script>";
+        }
+        else{
+            echo "<script>
+                    alert('Usuario modificado con exito');
+                </script>";
         }
         
     }
