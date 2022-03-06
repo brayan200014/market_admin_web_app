@@ -38,17 +38,16 @@
                             <td><?php echo $datosEmpleados[$i]['Identidad'] ?></td>
                             <td><?php echo $datosEmpleados[$i]['Telefono'] ?></td>
                             <td><?php echo $datosEmpleados[$i]['NombreSucursal'] ?></td>
-                            <!--<td> echo $datosEmpleados[$i]['NombreCiudad'] </td>-->
                             <td><?php echo $datosEmpleados[$i]['DescripcionPuesto'] ?></td>
                             
-                    <!--     <td>
-                                <a class="btn btn-primary" href="../Vistas/editarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
+                        <td>
+                                <a class="btn btn-primary" href="../Paginas/modificarEmpleado.php?id=<?php echo $datosEmpleados[$i]['IdEmpleado']?>">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a class="btn btn-danger" href="../Controladores/eliminarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
+                                <a class="btn btn-danger" href="../Vistas/vistaEliminarEmpleado.php?id=<?php echo $datosEmpleados[$i]['IdEmpleado']?>">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
-                            </td>  -->
+                            </td> 
                         </tr>
                         <?php
                             }

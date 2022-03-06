@@ -68,7 +68,6 @@
             }
         }
 
-    
         //LLENADO DE COMBOBOX PUESTOS DESDE LA BD
         public function ObtenerPuestos(){
 
@@ -100,13 +99,12 @@
             $this -> db -> null;
         }
 
-        //ELIMINAR EMPLEADOS
-        public function deleteEmployees($id) {
-
+        //ACTUALIZAR EMPLEADO
+        public function UpdateEmployees($id, $Nombre, $Apellido, $Identidad, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
             self::setNames();
-            $sql = "DELETE FROM Empleados WHERE IdEmpleado = $id";
+            $sql = "UPDATE Empleados SET Nombre = '$Nombre' ,Apellido= '$Apellido', Identidad= '$Identidad', Telefono='$Telefono', Direccion='$Direccion', FechaContratacion='$FechaContratacion', Estado=$Estado, Sucursales_IdSucursal=$Sucursales_IdSucursal, Puestos_IdPuesto= $Puestos_IdPuesto WHERE IdEmpleado = $id";
             $result = $this->db->query($sql);
-    
+
             if ($result) {
                 return true;
             } else {
@@ -114,26 +112,16 @@
             }
         }
 
-        //ACTUALIZAR EMPLEADOS
-        public function UpdateEmployees($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
+         //CAMBIAR ESTADO DEL EMPLEADO
+         public function offEmpleado($id) {
+
             self::setNames();
+            $sql = "UPDATE Empleados SET Estado = false WHERE IdEmpleado = $id";
+            $result = $this->db->query($sql);
     
-            $sql="UPDATE empleados SET 
-            Nombre='$Nombre',
-            Apellido='$Apellido',
-            Telefono='$Telefono',
-            Direccion='$Direccion',
-            Email='$Email',
-            FechaContratacion='$FechaContratacion',
-            Estado='$Estado',
-            Sucursales_IdSucursal='$Sucursales_IdSucursal',
-            Puestos_IdPuesto='$Puestos_IdPuesto',
-            WHERE IdEmpleado='$id'";
-    
-            $result=$this->db->query($sql);
-            if($result){
+            if ($result) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         }

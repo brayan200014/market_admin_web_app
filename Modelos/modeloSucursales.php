@@ -49,11 +49,11 @@
         }
 
         //GUARDAR SUCURSAL
-        public function setSucursal($NombreSucursal, $Direccion, $Ciudades_IdCiudad){
+        public function setSucursal($NombreSucursal, $Direccion, $Estado, $Ciudades_IdCiudad){
 
             self::setNames();
-            $sql = "INSERT INTO Sucursales( NombreSucursal, Direccion, Ciudades_IdCiudad) 
-                    VALUES ('$NombreSucursal', '$Direccion', $Ciudades_IdCiudad)";
+            $sql = "INSERT INTO Sucursales( NombreSucursal, Direccion, Estado, Ciudades_IdCiudad) 
+                    VALUES ('$NombreSucursal', '$Direccion', $Estado ,$Ciudades_IdCiudad)";
             $result = $this->db->query($sql);
     
             if ($result) {
@@ -77,38 +77,46 @@
             $this -> db -> null;
         }
 
-        //ELIMINAR SUCURSALES
-        public function deleteSucursales($id) {
-
-            self::setNames();
-            $sql = "DELETE FROM Sucursales WHERE IdSucursal = $id";
-            $result = $this->db->query($sql);
-    
-            if ($result) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
         //ACTUALIZAR SUCURSALES
-        public function UpdateSucursales($id, $NombreSucursal, $Direccion, $Ciudades_IdCiudad){
-            self::setNames();
-    
-            $sql="UPDATE Sucursales SET 
-            NombreSucursal='$NombreSucursal',
-            Direccion='$Direccion',
-            Ciudades_IdCiudad='$Ciudades_IdCiudad',
-            WHERE IdSucursal='$id'";
-    
-            $result=$this->db->query($sql);
-            if($result){
-                return true;
-            }else{
-                return false;
-            }
-        }
+      public function UpdateSucursal($id, $NombreSucursal, $Direccion, $Estado, $Ciudades_IdCiudad){
+        self::setNames();
+        $sql = "UPDATE Sucursales SET NombreSucursal = '$NombreSucursal', Direccion='$Direccion', Estado= $Estado, Ciudades_IdCiudad= $Ciudades_IdCiudad WHERE IdSucursal = $id";
+        $result = $this->db->query($sql);
 
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
+    //CAMBIAR ESTADO DE LA SUCURSAL
+    public function offSucursal($id) {
+
+        self::setNames();
+        $sql = "UPDATE Sucursales SET Estado = false WHERE IdSucursal = $id";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /* NO ES RECOMENDABLE BORRAR DATOS PERO SI LO DESEAN SERIA: ELIMINAR SUCURSALES
+    public function deleteSucursales($id) {
+
+        self::setNames();
+        $sql = "DELETE FROM Sucursales WHERE IdSucursal = $id";
+        $result = $this->db->query($sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }*/
+}
 
 ?>

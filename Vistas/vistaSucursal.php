@@ -36,14 +36,14 @@
                             <td><?php echo $datosSucursales[$i]['NombreCiudad'] ?></td>
                             <td><?php echo $datosSucursales[$i]['Direccion'] ?></td>
 
-                            <!--<td>
-                                <a class="btn btn-primary" href="../Vistas/editarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
+                            <td>
+                               <a class="btn btn-primary" href="../Paginas/modificarSucursal.php?id=<?php echo $datosSucursales[$i]['IdSucursal']?>">
                                     <i class="fas fa-pen"></i>
                                 </a>
-                                <a class="btn btn-danger" href="../Controladores/eliminarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
+                                <a class="btn btn-danger" href="../Vistas/vistaEliminarSucursal.php?id=<?php echo $datosSucursales[$i]['IdSucursal']?>">
                                     <i class="fas fa-trash-alt"></i>
                                 </a>
-                            </td> -->
+                            </td>
                         </tr>
                         <?php
                             }

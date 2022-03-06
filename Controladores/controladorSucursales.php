@@ -11,9 +11,9 @@
     }
 
     //GUARDAR SUCURSAL
-    function guardarSucursal($NombreSucursal, $Direccion, $Ciudades_IdCiudad){
+    function guardarSucursal($NombreSucursal, $Direccion, $Estado, $Ciudades_IdCiudad){
         $modeloSucursal= new Sucursal();
-        return $modeloSucursal->setSucursal($NombreSucursal, $Direccion, $Ciudades_IdCiudad);
+        return $modeloSucursal->setSucursal($NombreSucursal, $Direccion, $Estado, $Ciudades_IdCiudad);
     }
 
     if (isset($_POST['insertarSucursal'])) {
@@ -21,9 +21,55 @@
         $Direccion = $_POST['direccionS'];
         $Ciudades_IdCiudad= $_POST['ciudad'];
     
-        if(guardarSucursal($NombreSucursal, $Direccion, $Ciudades_IdCiudad)){
-            header('Location: ../Paginas/agregarSucursales.php');
+        if(guardarSucursal($NombreSucursal, $Direccion, true, $Ciudades_IdCiudad)){
+            echo "<script>
+            alert('Sucursal ingresada con exito');
+            window.location= '../Paginas/agregarSucursales.php'
+        </script>";
+        }
+        else{
+            echo "<script>
+            alert('Error al ingresar la Sucursal deseada');
+        </script>";
         }
     }
+
+    //ACTUALIZAR SUCURSAL
+    function modificarSucursal($id, $NombreSucursal, $Direccion, $Estado, $Ciudades_IdCiudad){
+        $modeloSucursal = new Sucursal();
+        return $modeloSucursal->UpdateSucursal($id, $NombreSucursal, $Direccion,$Estado, $Ciudades_IdCiudad);
+    }
+
+    function consultaSucursal($id){
+        $modeloSucursal = new Sucursal();
+        return $modeloSucursal->buscarSucursal($id);
+    }
+
+    if (isset($_POST['modificarSucursales'])) {
+        $id = $_POST['id'];
+        $NombreSucursal= $_POST['nombreS'];
+        $Direccion = $_POST['direccionS'];
+        $Ciudades_IdCiudad = $_POST['ciudad'];
+        
+      
+        if(modificarSucursal($id, $NombreSucursal, $Direccion, true ,$Ciudades_IdCiudad)){
+            echo "<script>
+            alert('Registro de Sucursal modificado con exito');
+            window.location= '../Paginas/modificarSucursal.php'
+        </script>";
+        }
+        else{
+            echo "<script>
+            alert('Error al ingresar la Sucursal');
+            </script>";
+        }
+    }
+
+    //CAMBIAR ESTADO DE LA SUCURSAL
+    function cambiarEstadoSucursal($id){
+        $modeloSucursal = new Sucursal();
+        return $modeloSucursal->offSucursal($id);
+    }
+
 
 ?>
