@@ -40,7 +40,15 @@
         $categoriaId = $_POST['categoria'];
     
         if(agregarProducto($nombre, $descripcion, $isv, $img, true , $categoriaId)){
-            header('Location: ../Vistas/tablaProductos.php');
+            echo "<script>
+                    alert('Producto ingresado con exito');
+                    window.location= '../Vistas/agregarProducto.php'
+                </script>";
+        }
+        else{
+            echo "<script>
+                    alert('Error al ingresar el producto');
+                </script>";
         }
     }
 
@@ -54,7 +62,15 @@
         $categoriaId = $_POST['categoria'];
       
         if(modificarProducto($id, $nombre, $descripcion, $isv, $img, true , $categoriaId)){
-            header('Location: ../Vistas/tablaProductos.php');
+            echo "<script>
+                    alert('Producto modificado con exito');
+                    window.location= '../Vistas/tablaProductos.php'
+                </script>";
+        }
+        else{
+            echo "<script>
+                    alert('Error al modificar el producto');
+                </script>";
         }
     }
 ?>
