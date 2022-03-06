@@ -49,11 +49,11 @@
         }
 
         //GUARDAR SUCURSAL
-        public function GuardarSucursal($NombreSucursal, $Direccion, $Ciudades_IdCiudad){
+        public function setSucursal($NombreSucursal, $Direccion, $Ciudades_IdCiudad){
 
             self::setNames();
             $sql = "INSERT INTO Sucursales( NombreSucursal, Direccion, Ciudades_IdCiudad) 
-                    VALUES ('$NombreSucursal', $Direccion, '$Ciudades_IdCiudad')";
+                    VALUES ('$NombreSucursal', '$Direccion', $Ciudades_IdCiudad)";
             $result = $this->db->query($sql);
     
             if ($result) {

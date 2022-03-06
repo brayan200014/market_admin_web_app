@@ -40,12 +40,15 @@
                             <td><?php echo $datosEmpleados[$i]['NombreSucursal'] ?></td>
                             <!--<td> echo $datosEmpleados[$i]['NombreCiudad'] </td>-->
                             <td><?php echo $datosEmpleados[$i]['DescripcionPuesto'] ?></td>
-
-                            <td>
-                                    <button class="btn btn-primary" type="submit"><i class="fas fa-eye"></i></button>
-                                    <button class="btn btn-primary" type="submit"><i class="fas fa-pen"></i></button>
-                                    <button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button>
-                            </td>
+                            
+                    <!--     <td>
+                                <a class="btn btn-primary" href="../Vistas/editarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
+                                    <i class="fas fa-pen"></i>
+                                </a>
+                                <a class="btn btn-danger" href="../Controladores/eliminarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </td>  -->
                         </tr>
                         <?php
                             }

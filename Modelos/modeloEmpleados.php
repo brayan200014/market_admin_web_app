@@ -58,7 +58,7 @@
 
             self::setNames();
             $sql = "INSERT INTO Empleados( Nombre, Apellido, Identidad, Telefono, Direccion, Email, FechaContratacion, Estado, Sucursales_IdSucursal, Puestos_IdPuesto) 
-                    VALUES ( '$Nombre', '$Apellido', '$Identidad', '$Telefono', '$Direccion', '$Email', '$FechaContratacion' , '$Estado' , $Sucursales_IdSucursal, $Puestos_IdPuesto)";
+                    VALUES ( '$Nombre', '$Apellido', '$Identidad', '$Telefono', '$Direccion', '$Email', '$FechaContratacion', $Estado , $Sucursales_IdSucursal, $Puestos_IdPuesto)";
             $result = $this->db->query($sql);
     
             if ($result) {
@@ -67,6 +67,8 @@
                 return false;
             }
         }
+
+    
         //LLENADO DE COMBOBOX PUESTOS DESDE LA BD
         public function ObtenerPuestos(){
 

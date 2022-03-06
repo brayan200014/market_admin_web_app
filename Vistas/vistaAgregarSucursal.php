@@ -1,29 +1,25 @@
 <?php include_once('../Controladores/controladorSucursales.php') ?>
 
 <div class="p-5">
-    <center><h1 class="h3 m-4 text-gray-800">Registro de Sucursales</h1></center>
-    <br>
-    <form class="g-3 needs-validation" novalidate>
+    <h1 class="h3 m-4 text-gray-800">Registro de Sucursales</h1>
+    <form class="g-3 needs-validation" action="../Controladores/controladorSucursales.php" method="POST" novalidate>
         <div class="m-4 position-relative">
-            <label for="nombre" class="form-label">Nombre de la sucursal:</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre de sucursal" required>
+                <label for="nombreS" class="form-label">Nombre de la Sucursal: </label>
+                <input type="text" class="form-control" id="nombreS" name="nombreS" required>
 
-            <!-- ******** MENSAJE DE VALIDACIÓN********  -->
-            <div class="valid-tooltip">¡Campo válido!</div>
-            <div class="invalid-tooltip">Campo no valido.</div>
-        </div>
-        <div class="m-4 position-relative">
-            <label for="direccion" class="form-label">Dirección</label>
-            <textarea name="direccion" class="form-control" id="direccion" placeholder="Ingrese la direccion" required></textarea>
-
-             <!-- ******** MENSAJE DE VALIDACIÓN********  -->
-            <div class="valid-tooltip">¡Campo válido!</div>
-            <div class="invalid-tooltip">Campo no valido.</div>
-        </div>
-        <div class="m-4 position-relative">
-            <label for="ciudad" class="form-label" required>Ciudad</label>
-            <select class="form-control" id="ciudad">
-                <option selected>Seleccione la Ciudad</option>
+                <div class="valid-tooltip">¡Campo válido!</div>
+                <div class="invalid-tooltip">Campo no valido.</div>
+            </div> 
+            <div class="m-4 position-relative">
+                <label for="direccionS" class="form-label">Dirección: </label>
+                <input type="text" class="form-control" id="direccionS" name="direccionS" required>
+                <div class="valid-tooltip">¡Campo válido!</div>
+                <div class="invalid-tooltip">Campo no valido.</div>
+            </div> 
+            <div class="m-4 position-relative">
+            <label for="ciudad" class="form-label" required>Ciudad: </label>
+            <select class="form-control" id="ciudad" name="ciudad">
+                <option selected>Seleccione la Sucursal</option>
                 <?php
                     $datoCiudad = listarCiudades();
 
@@ -34,15 +30,14 @@
                     }
                 ?>
             </select>
-            <!-- Mensajes para validación   -->
             <div class="valid-tooltip">¡Campo válido!</div>
             <div class="invalid-tooltip">Campo no valido.</div>
-        </div> 
-        <br>                 
+        </div>     
         <div class="row m-4">
-            <div class="d-flex justify-content-center"><button type="button" id="AgregarSucursal" onclick="" class="btn btn-outline-primary btn-sm">Guardar Sucursal</button></div>
+            <button class="btn btn-warning fw-bold float-end mr-3" type="submit" name="insertarSucursal">Guardar</button>
+            <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listarSucursales.php">Cancelar</a>
         </div>
+        
     </form>
 </div>
 
-   

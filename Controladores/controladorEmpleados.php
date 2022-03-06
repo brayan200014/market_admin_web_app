@@ -18,22 +18,26 @@
     }
 
     //GUARDAR EMPLEADOS
-    function setEmployees(){
-            
-        require_once("../Modelos/modeloEmpleados.php");
+    function guardarEmpleado($Nombre, $Apellido, $Identidad, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto){
         $modeloEmpleados= new Empleado();
-        $modeloEmpleados->Nombre = $_POST['Nombre'];
-        $modeloEmpleados->Apellido = $_POST['Apellido'];
-        $modeloEmpleados->Identidad = $_POST['Identidad'];
-        $modeloEmpleados->Telefono = $_POST['Telefono'];
-        $modeloEmpleados->Direccion = $_POST['Direccion'];
-        $modeloEmpleados->Email = $_POST['Email'];
-        $modeloEmpleados->FechaContratacion = $_POST['FechaContratacion'];
-        $modeloEmpleados->Estado = $_POST['Estado'];
-        $modeloEmpleados->Sucursales_IdSucursal = $_POST['Sucursales_IdSucursal'];
-        $modeloEmpleados->Puestos_IdPuesto = $_POST['Puestos_IdPuesto'];  
+        return $modeloEmpleados->setEmployees($Nombre, $Apellido, $Identidad, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto);
+    }
 
-        return $modeloempleado -> setEmployees($Nombre, $Apellido, $Identidad, $Telefono, $Direccion, $Email, $FechaContratacion, $Estado, $Sucursales_IdSucursal, $Puestos_IdPuesto);
+    //Recibe la petición de guardar
+    if (isset($_POST['insertarEmpleado'])) {
+        $Nombre = $_POST['nombre'];
+        $Apellido = $_POST['apellido'];
+        $Identidad = $_POST['identidad'];
+        $Telefono = $_POST['telefono'];
+        $Direccion = $_POST['direccion'];
+        $Email = $_POST['email'];
+        $FechaContratacion = $_POST['fechaC'];
+        $Sucursales_IdSucursal = $_POST['sucursal'];
+        $Puestos_IdPuesto= $_POST['puesto'];
+    
+        if(guardarEmpleado($Nombre, $Apellido, $Identidad, $Telefono, $Direccion, $Email, $FechaContratacion, true, $Sucursales_IdSucursal, $Puestos_IdPuesto)){
+            header('Location: ../Paginas/agregarSucursales.php');
+        }
     }
 
 ?>
