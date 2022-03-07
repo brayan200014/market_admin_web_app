@@ -16,6 +16,11 @@
         return $modeloClientes->updateClientes($IdCliente, $Nombre, $Apellido,$Telefono,$Direccion, $Email, $Identidad, $RTN);
     }
 
+    function consultarCliente($id){
+        $modeloClientes = new cliente();
+        return $modeloClientes->serchClientes($id);
+    }
+
     function eliminarCliente($id){
         $modeloClientes = new cliente();
         return $modeloClientes->deleteClientes($id);
@@ -31,7 +36,7 @@
         $RTN = $_POST['RTN'];
         
         
-        if(agregarCliente($Nombre, $Apellido, $Telefono,$Direccion, $Email, $Identidad, $RTN, true)){
+        if(agregarCliente($Nombre, $Apellido, $Telefono,$Direccion, $Email, $Identidad, $RTN)){
             echo "<script>
                     alert('Cliente ingresado con exito');
                     window.location= '../Paginas/paginaAgregarCliente.php'
@@ -54,10 +59,10 @@
         $Identidad = $_POST['Identidad'];
         $RTN = $_POST['RTN'];
 
-        if(modificarCliente($IdCliente,$Nombre, $Apellido, $Telefono,$Direccion, $Email, $Identidad, $RTN, true)){
+        if(modificarCliente($IdCliente ,$Nombre, $Apellido, $Telefono,$Direccion, $Email, $Identidad, $RTN)){
             echo "<script>
                     alert('Cliente modificado con exito');
-                    window.location= '../Paginas/paginaAgregarCliente.php'
+                    window.location= '../Paginas/paginatablaclientes.php'
                 </script>";
         }else{
             echo "<script>

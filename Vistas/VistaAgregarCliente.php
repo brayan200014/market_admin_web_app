@@ -19,16 +19,14 @@
     <div class="invalid-tooltip">Campo no valido.</div>
   </div>
 
-  <div class="mb-3">
-  <label for="Telefono" class="form-label">Telefono</label>
-  <input type="text" class="form-control needs-validation" id="Telefono" name="Telefono" placeholder="Ingrese el numero de celular" required pattern="[0-9]+">
-  <div class="valid-feedback">
-        Formato Valido
- </div>
-  <div class="invalid-feedback">
-       Este campo no puede estar vacio y debe tener un formato valido de solo numeros.
+  <div class="m-4 position-relative">
+    <label for="Telefono" class="form-label">Telefono:</label>
+    <input type="text" class="form-control" id="Telefono" name="Telefono" placeholder="Telefono del cliente" required>
+    <!-- Mensajes para validación   -->
+    <div class="valid-tooltip">¡Campo válido!</div>
+    <div class="invalid-tooltip">Campo no valido.</div>
   </div>
-</div>
+
 
 <div class="m-4 position-relative">
     <label for="Direccion" class="form-label">Dirección del cliente:</label>
@@ -63,6 +61,5 @@
   </div>
 
   <button class="btn btn-warning fw-bold float-end mr-3" type="submit" name="agregarCliente">Guardar</button>
-            <a class="btn btn-secondary fw-bold float-end" href="">Cancelar</a>
   </form>
 </div>

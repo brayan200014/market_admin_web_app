@@ -28,8 +28,7 @@
         public function serchClientes($id){
             self::setNames();
 
-            $sql = "Select IdCliente, Nombre, Apellido, Telefono, Direccion, Email, Identidad, RTN From Clientes
-            WHERE IdCliente = $id";
+            $sql = "Select * From Clientes WHERE IdCliente = $id";
 
             foreach ($this->db->query($sql) as $res) {
                 $this->clientes[] = $res;
@@ -52,10 +51,10 @@
             }        
         }   
         
-        public function updateClientes($IdCliente, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $Identidad, $RTN){
+        public function updateClientes($IdCliente,$Nombre, $Apellido, $Telefono, $Direccion, $Email, $Identidad, $RTN){
             self::setNames();
 
-            $sql="UPDATE Clientes SET Nombre='$Nombre', Apellido='$Apellido', Telefono='$Telefono',Direccion='$Direccion', Email='$Dmail', Identidad='$Identidad', RTN='$RTN'
+            $sql="UPDATE Clientes SET Nombre='$Nombre', Apellido='$Apellido', Telefono='$Telefono',Direccion='$Direccion', Email='$Email', Identidad='$Identidad', RTN='$RTN'
             WHERE IdCliente='$IdCliente'";
 
             $result=$this->db->query($sql);

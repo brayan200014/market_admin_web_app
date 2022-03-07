@@ -36,7 +36,7 @@ include_once('../Controladores/controladorClientes.php')
                             <td><?php echo $datosClientes[$i]['Telefono'] ?></td>
                             <td><?php echo $datosClientes[$i]['Email'] ?></td>
                             <td>
-                                <a class="btn btn-primary" href="../Vistas/editarProducto.php?id=<?php echo $datosClientes[$i]['IdCliente']?>">
+                                <a class="btn btn-primary" href="../Paginas/editarClientes.php?id=<?php echo $datosClientes[$i]['IdCliente']?>">
                                     <i class="fas fa-pen"></i>
                                 </a>
                                 <a class="btn btn-danger" href="../Controladores/eliminarCliente.php?id=<?php echo $datosClientes[$i]['IdCliente']?>">
