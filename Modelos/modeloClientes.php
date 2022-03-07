@@ -38,11 +38,11 @@
             $this->db = null;
         }
 
-        public function setClientes($nombre, $apellido, $telefono, $direccion, $email, $identidad, $rtn){
+        public function setClientes($Nombre, $Apellido, $Telefono, $Direccion, $Email, $Identidad, $RTN){
             self::setNames();
 
-            $sql="INSERT INTO Clientes(Nombre, Apellido, Direccion, Email, Identidad, RTN)
-                    VALUES ('$nombre', '$apellido', '$telefono', '$direccion', '$email', '$identidad', $rtn)";
+            $sql="INSERT INTO Clientes(Nombre, Apellido, Telefono, Direccion, Email, Identidad, RTN)
+                    VALUES ('$Nombre', '$Apellido', '$Telefono', '$Direccion', '$Email', '$Identidad', $RTN)";
             $result = $this->db->query($sql);
     
             if ($result) {
@@ -52,11 +52,11 @@
             }        
         }   
         
-        public function updateClientes($id, $nombre, $apellido, $telefono, $direccion, $email, $identidad, $rtn){
+        public function updateClientes($IdCliente, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $Identidad, $RTN){
             self::setNames();
 
-            $sql="UPDATE Clientes SET Nombre='$nombre', Apellido='$apellido', Direccion='$direccion', Email='$email', Identidad='$apellido', RTN='$rtn'
-            WHERE IdCliente='$id'";
+            $sql="UPDATE Clientes SET Nombre='$Nombre', Apellido='$Apellido', Telefono='$Telefono',Direccion='$Direccion', Email='$Dmail', Identidad='$Identidad', RTN='$RTN'
+            WHERE IdCliente='$IdCliente'";
 
             $result=$this->db->query($sql);
             if($result){

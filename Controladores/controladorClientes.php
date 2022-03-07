@@ -4,31 +4,66 @@
         $modeloClientes = new cliente();
         return $modeloClientes->obtenerClientes();
     }
-?>
-<?php
+ 
+    function agregarCliente($Nombre, $Apellido, $Telefono, $Direccion, $Email,$Identidad, $RTN){
+        $modeloClientes = new cliente();
+        return $modeloClientes->setClientes($Nombre, $Apellido, $Telefono, $Direccion, $Email, $Identidad,$RTN);
+    }
 
-        function obtenerClientes(){
-            require_once('../Modelos/modeloClientes.php');
-            $cliente = new cliente();
-            return;
-        }
 
-        function deleteClientes($id){
-            require_once('../Modelos/modeloClientes.php');
-            $Clientes = new cliente();
-            return $Clientes->deleteClientes($id);
-        }
+    function modificarCliente($IdCliente, $Nombre, $Apellido,$Telefono,$Direccion, $Email, $Identidad, $RTN){
+        $modeloClientes = new cliente();
+        return $modeloClientes->updateClientes($IdCliente, $Nombre, $Apellido,$Telefono,$Direccion, $Email, $Identidad, $RTN);
+    }
+
+    function eliminarCliente($id){
+        $modeloClientes = new cliente();
+        return $modeloClientes->deleteClientes($id);
+    }
     
-        function updateClientes($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email, $RTN){
-            require_once('../Modelos/modeloClientes.php');
-            $Clientes=new Empleado();
-            return $Clientes-> updateClientes($id, $Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN);
+    if(isset($_POST['agregarCliente'])){
+        $Nombre = $_POST['Nombre'];
+        $Apellido = $_POST['Apellido'];
+        $Telefono = $_POST['Telefono'];
+        $Direccion = $_POST['Direccion'];
+        $Email = $_POST['Email'];
+        $Identidad = $_POST['Identidad'];
+        $RTN = $_POST['RTN'];
+        
+        
+        if(agregarCliente($Nombre, $Apellido, $Telefono,$Direccion, $Email, $Identidad, $RTN, true)){
+            echo "<script>
+                    alert('Cliente ingresado con exito');
+                    window.location= '../Paginas/paginaAgregarCliente.php'
+                </script>";
+        }else{
+            echo "<script>
+                    alert('Error al ingresar el cliente');
+                </script>";
         }
-    
-        function setClientes($Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN){
-            require_once('../Modelos/modeloClientes.php');
-            $Clientes = new Empleado();
-            return $Clientes -> setClientes($Nombre, $Apellido, $Telefono, $Direccion, $Email,$RTN);
+        
+    }
+
+    if(isset($_POST['modificarCliente'])){
+        $IdCliente = $_POST['IdCliente'];
+        $Nombre = $_POST['Nombre'];
+        $Apellido = $_POST['Apellido'];
+        $Telefono = $_POST['Telefono'];
+        $Direccion = $_POST['Direccion'];
+        $Email = $_POST['Email'];
+        $Identidad = $_POST['Identidad'];
+        $RTN = $_POST['RTN'];
+
+        if(modificarCliente($IdCliente,$Nombre, $Apellido, $Telefono,$Direccion, $Email, $Identidad, $RTN, true)){
+            echo "<script>
+                    alert('Cliente modificado con exito');
+                    window.location= '../Paginas/paginaAgregarCliente.php'
+                </script>";
+        }else{
+            echo "<script>
+                    alert('Error al modificar el cliente');
+                </script>";
         }
+    }
 ?>
 
