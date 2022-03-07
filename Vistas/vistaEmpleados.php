@@ -1,9 +1,18 @@
-<?php include_once('../Controladores/controladorEmpleados.php') ?>
+<?php include_once('../Controladores/controladorEmpleados.php') ;
+
+        if(isset($_GET['id'])) {
+            $id = $_GET['id'];
+            
+            if($id!=null){
+                $datos = consultaEmpleado($id);
+            }
+        }
+?>
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Empleados</h1>
     <p class="mb-4"> Sección de Empleados, donde se mostraran los datos de: Codigo, Nombre y Apellido del Empleado,
-         Numero de Telefono para su posterior contacto, Nombre de la Sucursal donde labora y el Puesto que desempeña <a target="_blank"
+         Numero de Telefono para su posterior contacto, Nombre de la Sucursal donde labora y el Puesto que desempeña siempre y cuando su estado sea ACTIVO <a target="_blank"
             href="https://datatables.net"> official DataTables documentation</a>.</p>
 
     <!-- DataTales Example -->

@@ -15,14 +15,14 @@
     <input type="hidden" id="id" name="id" value="<?php echo $id ?>">
         <div class="m-4 position-relative">
                 <label for="nombreS" class="form-label">Nombre de la Sucursal: </label>
-                <input type="text" class="form-control" id="nombreS" name="nombreS" placeholder="Ingrese el nombre de la Sucursal" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,15}"  size="20" required>
+                <input type="text" class="form-control" id="nombreS" name="nombreS" placeholder="Ingrese el nombre de la Sucursal" value="<?php echo $datos[0]['NombreSucursal'] ?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,15}"  size="20" required>
 
                 <div class="valid-tooltip">¡Campo válido!</div>
                 <div class="invalid-tooltip">Campo no valido.</div>
             </div> 
             <div class="m-4 position-relative">
                 <label for="direccionS" class="form-label">Dirección: </label>
-                <input type="text" class="form-control" id="direccionS" name="direccionS" placeholder="Ingrese la Dirección">
+                <input type="text" class="form-control" id="direccionS" name="direccionS" placeholder="Ingrese la Dirección" value="<?php echo $datos[0]['Direccion'] ?>">
                 <div class="valid-tooltip">¡Campo válido!</div>
                 <div class="invalid-tooltip">Campo no valido.</div>
             </div> 
@@ -48,7 +48,7 @@
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>     
         <div class="row m-4">
-            <button class="btn btn-info fw-bold float-end mr-3" type="submit" name="modificarSucursales">Guardar Sucursal</button>
+            <button class="btn btn-warning fw-bold float-end mr-3" type="submit" name="modificarSucursales">Guardar Sucursal</button>
             <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listarSucursales.php">Cancelar</a>
         </div>
         

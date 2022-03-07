@@ -23,7 +23,8 @@
             $sql = "SELECT IdSucursal, NombreSucursal, Direccion, NombreCiudad
                     FROM Sucursales s
                     INNER JOIN Ciudades c
-                    ON s.Ciudades_IdCiudad = c.IdCiudad";
+                    ON s.Ciudades_IdCiudad = c.IdCiudad
+                    WHERE Estado = 1";
 
             foreach ($this->db->query($sql) as $res) {
                 $this->sucursal[] = $res;
@@ -36,11 +37,7 @@
         public function buscarSucursal($id) {
 
             self::setNames();
-            $sql = "SELECT IdSucursal, NombreSucursal, Direccion, NombreCiudad
-                    FROM Sucursales s
-                    INNER JOIN Ciudades c
-                    ON s.Ciudades_IdCiudad = c.IdCiudad
-                    WHERE idSucursal = $id";
+            $sql = "SELECT * FROM Sucursales WHERE IdSucursal = $id";
             foreach ($this->db->query($sql) as $res) {
                 $this->sucursal[] = $res;
             }

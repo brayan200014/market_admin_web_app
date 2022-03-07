@@ -34,7 +34,7 @@
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>     
         <div class="row m-4">
-            <button class="btn btn-info fw-bold float-end mr-3" type="submit" name="insertarSucursal">Guardar Sucursal</button>
+            <button class="btn btn-warning fw-bold float-end mr-3" type="submit" name="insertarSucursal">Guardar Sucursal</button>
             <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listarSucursales.php">Cancelar</a>
         </div>
         

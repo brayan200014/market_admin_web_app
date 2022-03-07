@@ -17,7 +17,7 @@
         </div>
         <div class="m-4 position-relative">
             <label for="identidad" class="form-label">No.Identidad del empleado: </label>
-            <input type="text" class="form-control" id="identidad" name="identidad" placeholder="Ingrese el No. de ID del empleado" pattern="[0-9]{0,13}" required>
+            <input type="text" class="form-control" id="identidad" name="identidad" placeholder="Ingrese el No. de ID del empleado" pattern="[0-9]{13,13}" required>
             <div class="valid-tooltip">¡Campo válido!</div>
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>
@@ -77,7 +77,7 @@
             </div>  
             <br>              
         <div class="row m-4">
-            <button class="btn btn-info fw-bold float-end mr-3" type="submit" name="insertarEmpleado">Guardar Empleado</button>
+            <button class="btn btn-warning fw-bold float-end mr-3" type="submit" name="insertarEmpleado">Guardar Empleado</button>
             <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listarEmpleados.php">Cancelar</a>
         </div>
     </form>

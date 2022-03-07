@@ -26,7 +26,8 @@
                     INNER JOIN Sucursales s
                     ON e.Sucursales_IdSucursal = s.IdSucursal  
                     INNER JOIN Puestos p
-                    ON e.Puestos_IdPuesto = p.IdPuesto";
+                    ON e.Puestos_IdPuesto = p.IdPuesto
+                    WHERE e.Estado = 1";
 
             foreach ($this->db->query($sql) as $res) {
                 $this->empleado[] = $res;
@@ -39,13 +40,7 @@
         public function serchEmployees($id) {
 
             self::setNames();
-            $sql = "SELECT IdEmpleado, CONCAT(Nombre, ' ', Apellido) AS Nombre, Identidad, Telefono, NombreSucursal, p.DescripcionPuesto
-                    FROM Empleados e
-                    INNER JOIN Sucursales s
-                    ON e.Sucursales_IdSucursal = s.IdSucursal  
-                    INNER JOIN Puestos p
-                    ON e.Puestos_IdPuesto = p.IdPuesto
-                    WHERE IdEmpleado = $id";
+            $sql = "SELECT * FROM Empleados WHERE IdEmpleado= $id";
             foreach ($this->db->query($sql) as $res) {
                 $this->empleado[] = $res;
             }
