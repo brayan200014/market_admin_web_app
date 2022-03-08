@@ -79,6 +79,14 @@
    
 
     function setGuardarVentaEnviada() {
+
+        $acumulador=0;
+        $CantidadArrayRecibido= $_POST['Cantidad'];
+        $PrecioArrayRecibido= $_POST['Precio'];
+
+        for($i=0; $i<sizeof($CantidadArrayRecibido); $i++){
+            $acumulador+= ($CantidadArrayRecibido[$i]*$PrecioArrayRecibido[$i]);
+        }
         $modeloVenta= new Venta();
         $idcliente= htmlspecialchars($_POST['IdCliente']);
         $modeloVenta->setIdCliente($idcliente);
@@ -88,13 +96,12 @@
         $modeloVenta->setIdUsuario($idusuario);
         $isv= htmlspecialchars($_POST['ISV']);
         $modeloVenta->setISV($isv);
+        $modeloVenta->setSubtotal($acumulador);
         $boolean= $modeloVenta->setGuardarVenta();
         $idVentaAgregado= $modeloVenta-> getIdVentaAgregado();
 
         $modeloDetalle= new DetalleVenta();
         $ProductoArrayRecibido= $_POST['Producto'];
-        $CantidadArrayRecibido= $_POST['Cantidad'];
-        $PrecioArrayRecibido= $_POST['Precio'];
 
         $count= sizeof($ProductoArrayRecibido);
 
@@ -132,6 +139,13 @@
 
     function updateVentaEnviada($idVentaGet) {
 
+        $acumulador=0;
+        $CantidadArrayRecibido= $_POST['Cantidad'];
+        $PrecioArrayRecibido= $_POST['Precio'];
+
+        for($i=0; $i<sizeof($CantidadArrayRecibido); $i++){
+            $acumulador+= ($CantidadArrayRecibido[$i]*$PrecioArrayRecibido[$i]);
+        }
        
             $modeloVenta= new Venta();
             $idcliente= htmlspecialchars($_POST['IdCliente']);
@@ -142,14 +156,15 @@
             $modeloVenta->setIdUsuario($idusuario);
             $isv= htmlspecialchars($_POST['ISV']);
             $modeloVenta->setISV($isv);
+            $modeloVenta->setSubtotal($acumulador);
             $boolean= $modeloVenta->updateVenta($idVentaGet);
 
             $datosDetalle= getDatosDetalleVentaEditar();
     
             $modeloDetalle= new DetalleVenta();
             $ProductoArrayRecibido= $_POST['Producto'];
-            $CantidadArrayRecibido= $_POST['Cantidad'];
             $PrecioArrayRecibido= $_POST['Precio'];
+
     
             $count= sizeof($ProductoArrayRecibido);
     
