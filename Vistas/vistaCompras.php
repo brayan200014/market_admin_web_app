@@ -25,6 +25,7 @@ include_once('../Controladores/controladorCompra.php');
                                             <th>Subtotal</th>
                                             <th>ISV</th>
                                             <th>Total</th>
+                                            <th>Opciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -37,6 +38,7 @@ include_once('../Controladores/controladorCompra.php');
                                             <th>Subtotal</th>
                                             <th>ISV</th>
                                             <th>Total</th>
+                                            <th>Opciones</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -53,7 +55,7 @@ include_once('../Controladores/controladorCompra.php');
                                             <td><?php echo $comprasRegistradas[$i]['Subtotal'] ?></td>
                                             <td><?php echo $comprasRegistradas[$i]['ISV'] ?></td>
                                             <td><?php echo $comprasRegistradas[$i]['Total'] ?></td>
-                                            <td><button class="btn btn-primary" type="submit"><i class="fas fa-eye"></i></button><button class="btn btn-primary" type="submit"><i class="fas fa-pen"></i></button><button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button></td>                           
+                                            <td><button class="btn btn-primary mr-2" type="submit"><i class="fas fa-eye"></i></button><button class="btn btn-primary mr-2" type="submit"><i class="fas fa-pen"></i></button><button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button></td>                           
                                         </tr>
                                         <?php  } ?>
                                     </tbody>
