@@ -42,7 +42,7 @@ include_once('../Controladores/controladorProveedores.php');
                                             <td><?php echo $listaProveedores[$i]['NombreProveedor'] ?></td>
                                             <td><?php echo $listaProveedores[$i]['Contacto'] ?></td>
                                             <td><?php echo $listaProveedores[$i]['Email'] ?></td>
-                                            <td><button class="btn btn-primary" type="submit"><i class="fas fa-eye"></i></button><button class="btn btn-primary" type="submit"><i class="fas fa-pen"></i></button><button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button></td>                           
+                                            <td><button class="btn btn-primary mr-2" type="submit"><i class="fas fa-pen"></i></button><button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button></td>                           
                                         </tr>
                                        <?php  } ?>
                                     </tbody>

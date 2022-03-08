@@ -81,9 +81,8 @@
             .forEach(function (form) {
             form.addEventListener('submit', function (event) {
                 if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-                alert("Campos vacios o relleandos incorrectamente")
+                    event.preventDefault()
+                    event.stopPropagation()
                 }
         
                 form.classList.add('was-validated')
