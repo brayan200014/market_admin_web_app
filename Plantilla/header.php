@@ -49,7 +49,7 @@ session_start();
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="../Vistas/principal.php">
+                <a class="nav-link" href="../Paginas/principal.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Principal</span></a>
             </li>
@@ -104,8 +104,8 @@ session_start();
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="../Vistas/agregarProducto.php">Agregar</a>
-                        <a class="collapse-item" href="../Vistas/tablaProductos.php">Ver información</a>
+                        <a class="collapse-item" href="../Paginas/productoFormulario.php">Agregar</a>
+                        <a class="collapse-item" href="../Paginas/productoTabla.php">Ver información</a>
                     </div>
                 </div>
             </li>
@@ -215,7 +215,7 @@ session_start();
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="../Vistas/infoUsuario.php?id=<?php echo $_SESSION['idUsuario'] ?>">
+                                <a class="dropdown-item" href="../Paginas/editarUsuario.php?id=<?php echo $_SESSION['idUsuario'] ?>">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>

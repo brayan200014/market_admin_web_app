@@ -24,12 +24,13 @@
         if(cambiarContrasena($id, $clave)){
             echo "<script>
                     alert('Usuario modificado con exito');
-                    window.location= '../Vistas/prueba.php';
+                    window.location= '../Paginas/principal.php';
                 </script>";
         }
         else{
             echo "<script>
-                    alert('Usuario modificado con exito');
+                    alert('Error al moficar el usuario');
+                    window.location= '../Paginas/principal.php';
                 </script>";
         }
         

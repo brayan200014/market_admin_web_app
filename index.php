@@ -1,11 +1,11 @@
 <?php
 
-include_once('../Controladores/controladorUsuario.php');
+include_once('./Controladores/controladorLogin.php');
 
 $alert = '';
 session_start();
 if(!empty($_SESSION['active'])){
-    header('location: ../Vistas/prueba.php');
+    header('location: ./Paginas/principal.php');
 }
 else{
     if(!empty($_POST)){
@@ -23,7 +23,7 @@ else{
                 $_SESSION['idUsuario'] = $datos[0]['IdUsuario'];
                 $_SESSION['nombreUsuario'] = $datos[0]['NombreUsuario'];
 
-                header('location: ../Vistas/prueba.php');
+                header('location: ./Paginas/principal.php');
             }
             else{
                 $alert = 'El usuario o la clave son incorrectos';
@@ -49,13 +49,13 @@ else{
     <title>Login</title>
 
     <!-- Custom fonts for this template-->
-    <link href="../Plantilla/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="./Plantilla/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="../Plantilla/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="./Plantilla/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -72,7 +72,7 @@ else{
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image"><img src="./Plantilla/img/bannerSupermercado.jpg" alt="banner" width="100%"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -95,9 +95,6 @@ else{
                                         <input type="submit" class="btn btn-primary btn-user btn-block" value="Ingresar">
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">¿Olvidaste tu contraseña?</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -111,14 +108,14 @@ else{
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../Plantilla/vendor/jquery/jquery.min.js"></script>
-    <script src="../Plantilla/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./Plantilla/vendor/jquery/jquery.min.js"></script>
+    <script src="./Plantilla/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../Plantilla/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="./Plantilla/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../Plantilla/js/sb-admin-2.min.js"></script>
+    <script src="./Plantilla/js/sb-admin-2.min.js"></script>
 
 </body>
 

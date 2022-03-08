@@ -11,7 +11,7 @@
                 Campo valido!
             </div>
             <div class="invalid-feedback">
-                Este campo no puede estar vacio.
+                Campo invalido.
             </div>
         </div>
         <div class="m-4 position-relative">
@@ -22,18 +22,18 @@
                 Campo valido!
             </div>
             <div class="invalid-feedback">
-                Este campo no puede estar vacio.
+                Campo invalido.
             </div>
         </div>
         <div class="m-4 position-relative">
             <label for="isv" class="form-label">ISV</label>
-            <input type="text" class="form-control needs-validation" id="isv" name="isv" required>
+            <input type="text" class="form-control needs-validation" id="isv" name="isv" pattern="^(\d|-)?(\d|,)*\.?\d*$" required>
             <!-- Mensajes para validación   -->
             <div class="valid-feedback">
                 Campo valido!
             </div>
             <div class="invalid-feedback">
-                Este campo no puede estar vacio.
+                Campo invalido.
             </div>
         </div>
         <div class="m-4 position-relative">
@@ -44,7 +44,7 @@
                 Campo valido!
             </div>
             <div class="invalid-feedback">
-                Este campo no puede estar vacio.
+                Campo invalido.
             </div>
         </div>
         <div class="m-4 position-relative">
@@ -66,12 +66,12 @@
                 Campo valido!
             </div>
             <div class="invalid-feedback">
-                Este campo no puede estar vacio.
+                Campo invalido.
             </div>
         </div>                  
         <div class="row m-4">
             <button class="btn btn-warning fw-bold float-end mr-3" type="submit" name="insertarProducto">Guardar</button>
-            <a class="btn btn-secondary fw-bold float-end" href="../Vistas/tablaProductos.php">Cancelar</a>
+            <a class="btn btn-secondary fw-bold float-end" href="../Paginas/productoTabla.php">Cancelar</a>
         </div>
     </form>
 </div>

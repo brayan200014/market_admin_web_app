@@ -42,7 +42,7 @@
         if(agregarProducto($nombre, $descripcion, $isv, $img, true , $categoriaId)){
             echo "<script>
                     alert('Producto ingresado con exito');
-                    window.location= '../Vistas/agregarProducto.php'
+                    window.location= '../Paginas/productoFormulario.php'
                 </script>";
         }
         else{
@@ -64,7 +64,7 @@
         if(modificarProducto($id, $nombre, $descripcion, $isv, $img, true , $categoriaId)){
             echo "<script>
                     alert('Producto modificado con exito');
-                    window.location= '../Vistas/tablaProductos.php'
+                    window.location= '../Paginas/productoTabla.php'
                 </script>";
         }
         else{

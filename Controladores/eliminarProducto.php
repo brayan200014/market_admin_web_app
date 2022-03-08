@@ -8,13 +8,13 @@
         if(deshabilitarProducto($id)){
             echo "<script>
                     alert('Producto eliminado con exito');
-                    window.location= '../Vistas/tablaProductos.php'
+                    window.location= '../Paginas/productoTabla.php'
                 </script>";
         }
         else{
             echo "<script>
                     alert('Error al eliminar el producto');
-                    window.location= '../Vistas/tablaProductos.php'
+                    window.location= '../Paginas/productoTabla.php'
                 </script>";
         }
       }
