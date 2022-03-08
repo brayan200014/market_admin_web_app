@@ -36,9 +36,6 @@
                             <td><?php echo $datosProductos[$i]['DescripcionProducto'] ?></td>
                             <td><?php echo $datosProductos[$i]['NombreCategoria'] ?></td>
                             <td>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inventoryModal" data-whatever="2">
-                                    <i class="fas fa-eye"></i>
-                                </button>
                                 <a class="btn btn-primary" href="../Vistas/editarProducto.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
                                     <i class="fas fa-pen"></i>
                                 </a>
@@ -52,43 +49,6 @@
                     ?>
                 </tbody>
             </table>
-        </div>
-    </div>
-</div>
-
-<!--Modal para ver el inventario-->
-<div class="modal fade" id="inventoryModal" tabindex="-1" aria-labelledby="inventoryModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="inventoryModalLabel">Inventario</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h5 class="modal-subtitle"></h5>
-                <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Sucursal:</label>
-                        <select class="form-control" id="categoria">
-
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="existencia" class="col-form-label">Existencia:</label>
-                        <input type="text" class="form-control" id="existencia">
-                    </div>
-                    <div class="form-group">
-                        <label for="precio" class="col-form-label">Precio:</label>
-                        <input type="text" class="form-control" id="precio">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Guardar cambios</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
         </div>
     </div>
 </div>

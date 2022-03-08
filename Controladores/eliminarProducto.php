@@ -6,7 +6,16 @@
         $id = $_GET['id'];
         
         if(deshabilitarProducto($id)){
-            header('Location: ../Vistas/tablaProductos.php');
+            echo "<script>
+                    alert('Producto eliminado con exito');
+                    window.location= '../Vistas/tablaProductos.php'
+                </script>";
+        }
+        else{
+            echo "<script>
+                    alert('Error al eliminar el producto');
+                    window.location= '../Vistas/tablaProductos.php'
+                </script>";
         }
       }
 
