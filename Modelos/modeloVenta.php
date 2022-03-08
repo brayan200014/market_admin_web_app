@@ -106,7 +106,7 @@
 
          
                 $consulta='INSERT INTO Ventas(FechaVenta, Subtotal,ISV, Clientes_IdCliente, Usuarios_IdUsuario, Sucursales_IdSucursal)
-                values('.$hoy.','. 700 .','. $this->ISV .','.$this->idCliente.','.$this->idUsuario.','.$this->idSucursal.');';
+                values('.$hoy.','. $this->subtotal .','. $this->ISV .','.$this->idCliente.','.$this->idUsuario.','.$this->idSucursal.');';
                  $result= $this->db->query($consulta); 
   
               if($result) {
@@ -165,7 +165,7 @@
         public function updateVenta($IdVentaEnviado) {
             self::setNames();
             $consulta= ' UPDATE Ventas SET Clientes_IdCliente='. $this->idCliente .',Sucursales_IdSucursal='. $this->idSucursal .', 
-            Usuarios_IdUsuario='. $this->idUsuario .', Subtotal='. 700 .', ISV='. $this->ISV .' where IdVenta='. $IdVentaEnviado .';';
+            Usuarios_IdUsuario='. $this->idUsuario .', Subtotal='. $this->subtotal .', ISV='. $this->ISV .' where IdVenta='. $IdVentaEnviado .';';
             $result= $this->db->query($consulta);
 
             if($result) {
