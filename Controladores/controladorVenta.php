@@ -70,6 +70,12 @@
         return $ventas;
     }
 
+    function getSucursalesRegistradas() {
+        $modeloVenta= new Venta();
+        $sucursales= $modeloVenta->getSucursales();
+        return $sucursales;
+    }
+
    
 
     function setGuardarVentaEnviada() {
@@ -136,7 +142,7 @@
             $modeloVenta->setIdUsuario($idusuario);
             $isv= htmlspecialchars($_POST['ISV']);
             $modeloVenta->setISV($isv);
-            $modeloVenta->updateVenta($idVentaGet);
+            $boolean= $modeloVenta->updateVenta($idVentaGet);
 
             $datosDetalle= getDatosDetalleVentaEditar();
     
@@ -153,7 +159,9 @@
                 $modeloDetalle -> setPrecio($PrecioArrayRecibido[$i]); 
                 $modeloDetalle -> updateDetalleVenta($idVentaGet, $datosDetalle[$i]['Productos_IdProducto']);
         }
-
+        
+      
+       
        
     }
 

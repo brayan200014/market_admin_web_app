@@ -1,4 +1,13 @@
 <?php include_once('../Controladores/controladorVenta.php') ?>
+<?php if(isset($_COOKIE['valid'])){ ?>
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+     <?php echo $_COOKIE['valid'];  ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  
+<?php }  ?>
   <!-- Page Heading -->
   <h1 class="h3 mb-2 text-gray-800">Ventas Registradas</h1>
                   <!--  <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.

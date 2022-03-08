@@ -1,8 +1,6 @@
 <?php include_once("../Controladores/controladorVenta.php") ?>
 <h1 class="h3 mb-2 text-gray-800">Registro de Ventas</h1>
-
-
-<form class="needs-validation" novalidate action="" method= "POST" enctype="application/x-www-form-urlencoded" >
+<form class="needs-validation" novalidate style="margin: 5%" action="" method= "POST" enctype="application/x-www-form-urlencoded" >
 <div class="mb-3">
   <label for="IdCliente" class="form-label">ID del Cliente</label>
   <input type="text" class="form-control needs-validation" id="IdCliente" name="IdCliente" placeholder="Ingrese el id del cliente" required pattern="[0-9]+">
@@ -14,14 +12,26 @@
   </div>
 </div>
 <div class="mb-3">
-  <label for="IdSucursal" class="form-label">ID de Sucursal</label>
-  <input type="text" class="form-control needs-validation" id="IdSucursal" name="IdSucursal" placeholder="Ingrese el id de la sucursal" required pattern="[0-9]+">
-  <div class="valid-feedback">
+  <label for="sucursal" class="form-label">Sucursal</label>
+  <select class="form-control needs-validation" id="sucursal" name="IdSucursal" required>
+  <option selected></option>
+                <?php
+                    $datosSucursales = getSucursalesRegistradas();
+
+                    for($i = 0; $i < sizeof($datosSucursales); $i++){
+                ?>
+                    <option value="<?php echo $datosSucursales[$i]['IdSucursal'] ?>"><?php echo $datosSucursales[$i]['NombreSucursal'] ?></option>
+                <?php
+                    }
+                ?>
+            </select>
+            <div class="valid-feedback">
         Formato Valido
  </div>
   <div class="invalid-feedback">
-       Este campo no puede estar vacio y debe tener un formato valido de solo numeros.
+       Este campo no puede estar vacio, debe elegir una sucursal.
   </div>
+ 
 </div>
 <div class="mb-3">
   <label for="IdUsuario" class="form-label">ID de Usuario</label>
@@ -81,6 +91,8 @@
 </div>
 </div>
 <div class="d-flex justify-content-center"><button type="button" id="Agregar" onclick="agregarFila()" class="btn btn-outline-primary btn-sm">Agregar fila detalle</button></div>
-<div class="d-flex justify-content-end"><button class="btn btn-primary" type= "submit" onclick="<?php validarDatosVentas() ?>" >Agregar Venta</button></div> <br>
+<div class="d-flex justify-content-end"><button class="btn btn-warning fw-bold float-end mr-2" type= "submit" onclick="<?php validarDatosVentas() ?>" >Agregar Venta</button>
+<a class="btn btn-secondary fw-bold float-end" href="../Paginas/listadoVentas.php">Cancelar</a>
+</div> <br>
  </form>
  

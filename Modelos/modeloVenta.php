@@ -150,6 +150,18 @@
          $this->db= null;
         }
 
+        public function getSucursales() {
+            $datosSucursales;
+            self::setNames();
+            $consulta= 'SELECT IdSucursal, NombreSucursal FROM Sucursales;';
+            foreach($this->db->query($consulta) as $res) {
+                $datosSucursales[]= $res;
+         }
+
+         return $datosSucursales;
+         $this->db= null;
+        }
+
         public function updateVenta($IdVentaEnviado) {
             self::setNames();
             $consulta= ' UPDATE Ventas SET Clientes_IdCliente='. $this->idCliente .',Sucursales_IdSucursal='. $this->idSucursal .', 
@@ -157,10 +169,12 @@
             $result= $this->db->query($consulta);
 
             if($result) {
+                setcookie('valid', 'Se actualizo con exito',time() + 60*60*24*30,'/'); 
                 return true;
             }
             else 
             {
+               
                 return false; 
             } 
            
