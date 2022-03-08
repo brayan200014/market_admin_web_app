@@ -14,7 +14,7 @@
     <form class="g-3 needs-validation" action="../Controladores/controladorUsuario.php" method="POST" novalidate>
         <input type="hidden" id="id" name="id" value="<?php echo $id ?>">
         <div class="m-4 position-relative">
-            <label for="nombre" class="form-label">Nombre del producto</label>
+            <label for="nombre" class="form-label">Nombre usuario</label>
             <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $datos[0]['NombreUsuario'] ?>" disabled required>
             <!-- Mensajes para validación   -->
             <div class="valid-tooltip">¡Campo válido!</div>
@@ -22,7 +22,7 @@
         </div>
         <div class="m-4 position-relative">
             <label for="correo" class="form-label">Correo</label>
-            <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $datos[0]['Correo'] ?>" disabled required>
+            <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $datos[0]['Correo'] ?>" required>
             <!-- Mensajes para validación   -->
             <div class="valid-tooltip">¡Campo válido!</div>
             <div class="invalid-tooltip">Campo no valido.</div>
