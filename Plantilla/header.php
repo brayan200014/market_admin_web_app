@@ -72,8 +72,8 @@ session_start();
                 <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="./agregarVenta.php">Agregar</a>
+                        <a class="collapse-item" href="./listadoVentas.php">Ver información</a>
                     </div>
                 </div>
             </li>
