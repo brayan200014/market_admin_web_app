@@ -48,13 +48,10 @@
     <!-- Bootstrap core JavaScript-->
     <script src="../Plantilla/vendor/jquery/jquery.min.js"></script>
     <script src="../Plantilla/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="../Plantilla/vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="../Plantilla/js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="../Plantilla/vendor/chart.js/Chart.min.js"></script>
     <script src="../Plantilla/vendor/datatables/jquery.dataTables.min.js"></script> <!--NEW-->
