@@ -88,8 +88,8 @@ session_start();
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="../Paginas/agregarCompra.php">Agregar</a>
+                        <a class="collapse-item" href="../Paginas/listadoCompras.php">Ver información</a>
                     </div>
                 </div>
             </li>
@@ -136,8 +136,8 @@ session_start();
                 <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="./agregarProveedor.php">Agregar</a>
+                        <a class="collapse-item" href="./listadoProveedores.php">Ver información</a>
                     </div>
                 </div>
             </li>
