@@ -82,5 +82,6 @@
   </div>
 
   <button class="btn btn-warning fw-bold float-end mr-3" type="submit" name="agregarCliente">Guardar</button>
+  <a class="btn btn-secondary fw-bold float-end" href="../Paginas/tablaclientes.php">Cancelar</a>
   </form>
 </div>

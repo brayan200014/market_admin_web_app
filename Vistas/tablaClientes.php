@@ -22,6 +22,7 @@ include_once('../Controladores/controladorClientes.php')
                             <th>Identidad</th>
                             <th>Telefono</th>
                             <th>Correo</th>
+                            <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>

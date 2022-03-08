@@ -97,6 +97,7 @@
 
     <div class="row m-4">
             <button class="btn btn-warning fw-bold float-end mr-2" type="submit" name="modificarCliente">Guardar</button>
+            <a class="btn btn-secondary fw-bold float-end" href="../Paginas/tablaclientes.php">Cancelar</a>
     </div>
 
     </form>
