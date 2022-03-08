@@ -31,7 +31,7 @@
                             <th>Telefono</th>
                             <th>Sucursal</th>
                             <th>Puesto</th>
-
+                            <th>Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
