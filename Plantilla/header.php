@@ -23,6 +23,9 @@ session_start();
     <!-- Custom styles for this template-->
     <link href="../Plantilla/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this page -->
+    <link href="../Plantilla/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"><!-- New -->
+
 </head>
 
 <body id="page-top">
@@ -46,7 +49,7 @@ session_start();
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="../Vistas/principal.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Principal</span></a>
             </li>
@@ -101,8 +104,8 @@ session_start();
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="../Vistas/agregarProducto.php">Agregar</a>
+                        <a class="collapse-item" href="../Vistas/tablaProductos.php">Ver información</a>
                     </div>
                 </div>
             </li>

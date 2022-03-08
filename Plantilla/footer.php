@@ -57,10 +57,40 @@
 
     <!-- Page level plugins -->
     <script src="../Plantilla/vendor/chart.js/Chart.min.js"></script>
+    <script src="../Plantilla/vendor/datatables/jquery.dataTables.min.js"></script> <!--NEW-->
+    <script src="../Plantilla/vendor/datatables/dataTables.bootstrap4.min.js"></script> <!--NEW-->
 
     <!-- Page level custom scripts -->
     <script src="../Plantilla/js/demo/chart-area-demo.js"></script>
     <script src="../Plantilla/js/demo/chart-pie-demo.js"></script>
+    <script src="../Plantilla/js/demo/datatables-demo.js"></script><!--NEW-->
+
+    <script src="../Plantilla/js/productos/logicaProductos.js"></script><!--NEW-->
+
+    <script>
+
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+        'use strict'
+        
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+        
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                alert("Campos vacios o relleandos incorrectamente")
+                }
+        
+                form.classList.add('was-validated')
+            }, false)
+            })
+        })()
+    </script>
 
 </body>
 
