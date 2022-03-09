@@ -1,4 +1,14 @@
 <?php include_once("../Controladores/controladorClientes.php") ?>
+
+<?php if(isset($_GET['valueagg']) && $_GET['valueagg']==1) { ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Cliente Guardado con exito
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php } ?>
+
 <div class="p-5">
 <h1 class="h3 mb-2 text-gray-800">Registro del Cliente</h1>
 <form class="g-3 needs-validation" action="../Controladores/controladorClientes.php" method="POST" novalidate>
@@ -26,7 +36,7 @@
   </div>
 
   <div class="m-4 position-relative">
-    <label for="Telefono" class="form-label">Telefono:</label>
+    <label for="Telefono" class="form-label">Teléfono:</label>
     <input type="text" class="form-control needs-validation" id="Telefono" name="Telefono" placeholder="Ingrese el telefono del cliente" required>
     <div class="valid-feedback">
         Formato Valido

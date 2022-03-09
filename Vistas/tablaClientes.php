@@ -1,6 +1,24 @@
 <?php
 include_once('../Controladores/controladorClientes.php')
 ?>
+
+<?php if(isset($_GET['valuemod']) && $_GET['valuemod']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Cliente modificado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+<?php if(isset($_GET['valueEli']) && $_GET['valueEli']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Cliente eliminado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Clientes</h1>
         <!--  <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.

@@ -38,8 +38,7 @@
         
         if(agregarCliente($Nombre, $Apellido, $Telefono,$Direccion, $Email, $Identidad, $RTN)){
             echo "<script>
-                    alert('Cliente ingresado con exito');
-                    window.location= '../Paginas/paginatablaclientes.php'
+                    window.location= '../Paginas/paginaAgregarCliente.php?valueagg=1'
                 </script>";
         }else{
             echo "<script>
@@ -61,8 +60,7 @@
 
         if(modificarCliente($IdCliente ,$Nombre, $Apellido, $Telefono,$Direccion, $Email, $Identidad, $RTN)){
             echo "<script>
-                    alert('Cliente modificado con exito');
-                    window.location= '../Paginas/paginatablaclientes.php'
+                    window.location= '../Paginas/paginatablaclientes.php?valuemod=1'
                 </script>";
         }else{
             echo "<script>

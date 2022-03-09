@@ -39,7 +39,7 @@
   </div>
 
   <div class="m-4 position-relative">
-    <label for="Telefono" class="form-label">Telefono:</label>
+    <label for="Telefono" class="form-label">Teléfono:</label>
     <input type="text" class="form-control needs-validation" id="Telefono" name="Telefono" value="<?php echo $datos[0]['Telefono'] ?>" required>
     <div class="valid-feedback">
         Formato Valido
@@ -73,7 +73,7 @@
   </div>
 
   <div class="m-4 position-relative">
-    <label for="Identidad" class="form-label"># de identidad del cliente:</label>
+    <label for="Identidad" class="form-label">Número de identidad del cliente:</label>
     <input type="text" class="form-control needs-validation" id="Identidad" name="Identidad" value="<?php echo $datos[0]['Identidad'] ?>" required>
     <div class="valid-feedback">
         Formato Valido
