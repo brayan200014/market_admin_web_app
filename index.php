@@ -18,10 +18,8 @@ else{
 
             if(!empty($_POST["recuerdame"])) {
                 setcookie ("username",$_POST["usuario"],time()+ 3600);
-                setcookie ("password",$_POST["clave"],time()+ 3600);
             } else {
                 setcookie("username","");
-                setcookie("password","");
             }
 
             $datos = iniciarSesion($user, $pass);
@@ -57,6 +55,7 @@ else{
     <title>Login</title>
 
     <!-- Custom fonts for this template-->
+    <link href="./Plantilla/css/login.css" rel="stylesheet" type="text/css">
     <link href="./Plantilla/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -67,7 +66,7 @@ else{
 
 </head>
 
-<body class="bg-gradient-primary">
+<body>
 
     <div class="container">
 
@@ -76,7 +75,7 @@ else{
 
             <div class="col-xl-10 col-lg-12 col-md-9 mt-5">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border border-primary shadow-sm my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -94,8 +93,7 @@ else{
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="clave" name="clave" placeholder="Contraseña" 
-                                                value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>">
+                                                id="clave" name="clave" placeholder="Contraseña" >
                                         </div>
                                         <div class="custom-control custom-checkbox small">
                                             <input type="checkbox" class="custom-control-input" id="recuerdame" name="recuerdame" checked>
