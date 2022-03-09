@@ -23,8 +23,7 @@
     
         if(guardarSucursal($NombreSucursal, $Direccion, true, $Ciudades_IdCiudad)){
             echo "<script>
-            alert('Sucursal ingresada con exito');
-            window.location= '../Paginas/agregarSucursales.php'
+            window.location= '../Paginas/agregarSucursales.php?value=1'
         </script>";
         }
         else{
@@ -54,13 +53,12 @@
       
         if(modificarSucursal($id, $NombreSucursal, $Direccion, true ,$Ciudades_IdCiudad)){
             echo "<script>
-            alert('Registro de Sucursal modificado con exito');
-            window.location= '../Paginas/modificarSucursal.php'
+            window.location= '../Paginas/listarSucursales.php?value=1'
         </script>";
         }
         else{
             echo "<script>
-            alert('Error al ingresar la Sucursal');
+            alert('Error al modificar la Sucursal');
             </script>";
         }
     }

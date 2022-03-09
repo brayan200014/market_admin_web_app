@@ -1,6 +1,17 @@
 <?php include_once('../Controladores/controladorEmpleados.php'); ?>
 
 <div class="p-5">
+    <?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Registro Guardado con exito
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php } ?>
+
+
+<div class="p-5">
     <h1 class="h3 m-4 text-gray-800">Registro Empleados</h1>
     <form class="g-3 needs-validation" action="../Controladores/controladorEmpleados.php" method="POST" novalidate>
         <div class="m-4 position-relative">
