@@ -16,6 +16,14 @@ else{
             $user = $_POST['usuario'];
             $pass = $_POST['clave'];
 
+            if(!empty($_POST["recuerdame"])) {
+                setcookie ("username",$_POST["usuario"],time()+ 3600);
+                setcookie ("password",$_POST["clave"],time()+ 3600);
+            } else {
+                setcookie("username","");
+                setcookie("password","");
+            }
+
             $datos = iniciarSesion($user, $pass);
 
             if(sizeof($datos) > 0){
@@ -72,7 +80,7 @@ else{
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"><img src="./Plantilla/img/bannerSupermercado.jpg" alt="banner" width="100%"></div>
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image"><img src="./Plantilla/img/bannerSupermercado.jpg" alt="banner" width="100%" height="100%"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -81,11 +89,17 @@ else{
                                     <form class="user" action="" method="POST">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
-                                                id="usuario" name="usuario" placeholder="Ingresa tu nombre de usuario">
+                                                id="usuario" name="usuario" placeholder="Ingresa tu nombre de usuario" 
+                                                value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="clave" name="clave" placeholder="Contraseña">
+                                                id="clave" name="clave" placeholder="Contraseña" 
+                                                value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } ?>">
+                                        </div>
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="recuerdame" name="recuerdame" checked>
+                                            <label class="custom-control-label" for="recuerdame">Recuerdame</label>
                                         </div>
                                         <div class="alert text-danger">
                                             <?php echo isset($alert) ? $alert : ''; ?>
