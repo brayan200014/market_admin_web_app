@@ -5,7 +5,7 @@
     <form class="g-3 needs-validation" action="../Controladores/controladorSucursales.php" method="POST" novalidate>
         <div class="m-4 position-relative">
                 <label for="nombreS" class="form-label">Nombre de la Sucursal: </label>
-                <input type="text" class="form-control" id="nombreS" name="nombreS" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,15}"  size="20" required>
+                <input type="text" class="form-control" id="nombreS" name="nombreS" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,50}"  size="20" required>
 
                 <div class="valid-tooltip">¡Campo válido!</div>
                 <div class="invalid-tooltip">Campo no valido.</div>

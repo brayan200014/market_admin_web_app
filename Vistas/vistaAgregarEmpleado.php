@@ -5,13 +5,13 @@
     <form class="g-3 needs-validation" action="../Controladores/controladorEmpleados.php" method="POST" novalidate>
         <div class="m-4 position-relative">
             <label for="nombre" class="form-label">Nombre del empleado: </label>
-            <input type="text" class="form-control needs-validation" id="nombre" name="nombre" placeholder="Ingrese el nombre del empleado" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,15}"  size="20" required >
+            <input type="text" class="form-control needs-validation" id="nombre" name="nombre" placeholder="Ingrese el nombre del empleado" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,25}"  size="20" required >
             <div class="valid-tooltip">¡Campo válido!</div>
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>
         <div class="m-4 position-relative">
             <label for="apellido" class="form-label">Apellido del empleado: </label>
-            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese el apellido del empleado" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,15}"  size="20" required>
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese el apellido del empleado" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,25}"  size="20" required>
             <div class="valid-tooltip">¡Campo válido!</div>
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>
@@ -33,13 +33,13 @@
         </div>
         <div class="m-4 position-relative">
             <label for="email" class="form-label">Correo Electrónico: </label>
-            <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese un email válido ejemplo: web@gmail.com" pattern=".+@gmail\.com" size="15" required> <!--Los correos deben ser gmail-->
+            <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese un email válido ejemplo: web@gmail.com" pattern=".+@\.com" size="15" required> <!--Los correos deben ser gmail-->
             <div class="valid-tooltip">¡Campo valido!</div>
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>
         <div class="m-4 position-relative">
             <label for="fechaC" class="form-label">Fecha Contratación: </label>
-            <input type="date" class="form-control" id="fechaC" name="fechaC" min=2012-10-08 max=2022-03-10 required>
+            <input type="date" class="form-control" id="fechaC" name="fechaC" min=2012-10-08 max=2022-03-09 required>
         </div>
         <div class="m-4 position-relative">
             <label for="sucursal" class="form-label" required>Sucursal: </label>

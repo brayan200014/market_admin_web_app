@@ -15,7 +15,7 @@
     <input type="hidden" id="id" name="id" value="<?php echo $id ?>">
         <div class="m-4 position-relative">
                 <label for="nombreS" class="form-label">Nombre de la Sucursal: </label>
-                <input type="text" class="form-control" id="nombreS" name="nombreS" placeholder="Ingrese el nombre de la Sucursal" value="<?php echo $datos[0]['NombreSucursal'] ?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,15}"  size="20" required>
+                <input type="text" class="form-control" id="nombreS" name="nombreS" placeholder="Ingrese el nombre de la Sucursal" value="<?php echo $datos[0]['NombreSucursal'] ?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,50}"  size="50" required>
 
                 <div class="valid-tooltip">¡Campo válido!</div>
                 <div class="invalid-tooltip">Campo no valido.</div>
