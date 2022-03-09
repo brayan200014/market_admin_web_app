@@ -1,13 +1,21 @@
-<?php include_once('../Controladores/controladorEmpleados.php') ;
+<?php include_once('../Controladores/controladorEmpleados.php') ; ?>
 
-        if(isset($_GET['id'])) {
-            $id = $_GET['id'];
-            
-            if($id!=null){
-                $datos = consultaEmpleado($id);
-            }
-        }
-?>
+<?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro modificado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+<?php if(isset($_GET['valueDelete']) && $_GET['valueDelete']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro eliminado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
 
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Empleados</h1>

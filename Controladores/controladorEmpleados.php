@@ -1,6 +1,6 @@
 <?php
-
     include_once('../Modelos/modeloEmpleados.php');
+    
     function listarEmpleados()
     {
     $modeloEmpleados = new Empleado();
@@ -37,8 +37,7 @@
     
         if(guardarEmpleado($Nombre, $Apellido, $Identidad, $Telefono, $Direccion, $Email, $FechaContratacion, true, $Sucursales_IdSucursal, $Puestos_IdPuesto)){
             echo "<script>
-            alert('Empleado ingresado con exito');
-            window.location= '../Paginas/agregarEmpleados.php'
+            window.location= '../Paginas/agregarEmpleados.php?value=1'
         </script>";
         }
         else{
@@ -74,9 +73,8 @@
         if(modificarEmpleado($id, $Nombre, $Apellido, $Identidad, $Telefono, $Direccion, $Email, $FechaContratacion, true, $Sucursales_IdSucursal, $Puestos_IdPuesto))
         {
             echo "<script>
-                    alert('Empleado modificado con exito');
-                    window.location= '../Paginas/listarEmpleados.php'
-                </script>";
+            window.location= '../Paginas/listarEmpleados.php?value=1'
+        </script>";
         }
         else{
             echo "<script>

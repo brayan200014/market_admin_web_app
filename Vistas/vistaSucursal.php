@@ -1,10 +1,27 @@
 <?php include_once('../Controladores/controladorSucursales.php') ?>
 
+<?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro modificado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+<?php if(isset($_GET['valueDelete']) && $_GET['valueDelete']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro eliminado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Sucursales</h1>
     <p class="mb-4"> Sección de Sucursales, donde se mostraran los datos siguiente: Código, Nombre de la Sucursal,
          Ciudad en la que se encuentra y su respectiva Dirección <a target="_blank"
-            href="https://datatables.net"> official DataTables documentation</a>.</p>
+            href="../Vistas/vistaAgregarSucursal.php">Agrega una nueva Sucursal</a>.</p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">

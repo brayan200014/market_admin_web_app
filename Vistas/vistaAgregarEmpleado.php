@@ -1,6 +1,16 @@
 <?php include_once('../Controladores/controladorEmpleados.php'); ?>
 
 <div class="p-5">
+    <?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Registro de Empleado Guardado con exito
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php } ?>
+
+<div class="p-5">
     <h1 class="h3 m-4 text-gray-800">Registro Empleados</h1>
     <form class="g-3 needs-validation" action="../Controladores/controladorEmpleados.php" method="POST" novalidate>
         <div class="m-4 position-relative">
@@ -33,7 +43,7 @@
         </div>
         <div class="m-4 position-relative">
             <label for="email" class="form-label">Correo Electrónico: </label>
-            <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese un email válido ejemplo: web@gmail.com" pattern=".+@\.com" size="15" required> <!--Los correos deben ser gmail-->
+            <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese un email válido ejemplo: web@gmail.com" pattern=".+@gmail\.com" size="15" required> <!--Los correos deben ser gmail-->
             <div class="valid-tooltip">¡Campo valido!</div>
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>
