@@ -75,7 +75,7 @@
         {
             echo "<script>
                     alert('Empleado modificado con exito');
-                    window.location= '../Paginas/modificarEmpleado.php'
+                    window.location= '../Paginas/listarEmpleados.php'
                 </script>";
         }
         else{

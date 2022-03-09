@@ -39,7 +39,7 @@
         </div>
         <div class="m-4 position-relative">
             <label for="fechaC" class="form-label">Fecha Contratación: </label>
-            <input type="date" class="form-control" id="fechaC" name="fechaC" min=2012-10-08 max=2022-03-10 required>
+            <input type="date" class="form-control" id="fechaC" name="fechaC" min=2012-10-08 max=2022-03-09 required>
         </div>
         <div class="m-4 position-relative">
             <label for="sucursal" class="form-label" required>Sucursal: </label>
