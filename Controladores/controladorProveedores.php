@@ -5,7 +5,7 @@
 
 <?php
     //Funcion que devuelve las ventas que hay en la base de datos obtenidas desde el modelo
-    function listarVentas(){
+    function listarProveedores(){
         $modeloProveedor = new Proveedor();
         $proveedores = $modeloProveedor->getProveedores();
         return $proveedores;
@@ -32,6 +32,52 @@
         {
             print_r($_POST);
         }
+    }
+
+    function getDatosProveedoresEditar() {
+        if(isset($_GET['id'])){
+            $id= $_GET['id']; 
+            $proveedorModelo= new Proveedor();
+            $datosProveedorEditar= $proveedorModelo-> getDatosProveedoresEditar($id);
+            if(!empty($datosProveedorEditar)) {
+                return $datosProveedorEditar; 
+            }
+            else 
+            {
+                return false;
+            }
+        
+            
+        }
+    }
+
+
+    function validarDatosUpdateProveedor($idObtenido) {
+        if(!empty($_POST)) {
+            updateProveedorEnviado($idObtenido);
+        }
+        else 
+        {
+            
+        }
+    }
+
+    function updateProveedorEnviado($idProveedorGet) {
+       
+            $modeloProveedor = new Proveedor();
+            $NombreProveedor= htmlspecialchars($_POST['NombreProveedor']);
+            $modeloProveedor->setNombreProveedor($NombreProveedor);
+            $Contacto= htmlspecialchars($_POST['Contacto']);
+            $modeloProveedor->setContacto($Contacto);
+            $Email=  htmlspecialchars($_POST['Email']);
+            $modeloProveedor->setEmail($Email);
+            $modeloProveedor->updateProveedor($idProveedorGet);
+    
+    }
+
+    function eliminarProveedor($id){
+        $modeloProveedor = new Proveedor();
+        return $modeloProveedor->deleteProveedor($id);
     }
     
 ?>

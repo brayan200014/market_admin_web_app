@@ -96,7 +96,7 @@
             self::setNames();
             $fechadeHoy = date("Ymd");
             $consulta = "INSERT INTO Compras(FechaCompra, Subtotal,ISV, Empleados_IdEmpleado, Sucursales_IdSucursal, Proveedores_IdProveedor) 
-            values('".$fechadeHoy."', '700', '".$this->ISV."', '".$this->Empleados_IdEmpleado."', '".$this->Sucursales_IdSucursal."', '".$this->Proveedores_IdProveedor."')";
+            values('".$fechadeHoy."', '".$this->Subtotal."' , '".$this->ISV."', '".$this->Empleados_IdEmpleado."', '".$this->Sucursales_IdSucursal."', '".$this->Proveedores_IdProveedor."')";
             $result = $this->db->query($consulta);
 
             if($result){
@@ -118,6 +118,31 @@
             }
             return $this->idCompraAgregado;
             $this->db = null;
+        }
+
+        public function getDatosCompraEditar($id){
+            self::setNames();
+            $consulta = "SELECT * from Compras where IdCompra = '".$id."';";
+            foreach($this->db->query($consulta) as $res){
+                $datosCompraEditar[] = $res;
+            }
+            return $datosCompraEditar;
+            $this->db = null;
+        }
+
+        public function updateCompra($idCompraEnviado){
+            self::setNames();
+            $fechadeHoy = date("Ymd");
+            $consulta = "UPDATE Compras set FechaCompra = '".$fechadeHoy."', Subtotal = '".$this->Subtotal."',ISV = '".$this->ISV."', Empleados_IdEmpleado = '".$this->Empleados_IdEmpleado."', Sucursales_IdSucursal = '".$this->Sucursales_IdSucursal."' , Proveedores_IdProveedor = '".$this->Proveedores_IdProveedor."' where IdCompra = '".$idCompraEnviado."';";
+            $result = $this->db->query($consulta);
+
+            if($result) {
+                return true;
+            }
+            else 
+            {
+                return false; 
+            } 
         }
 
 

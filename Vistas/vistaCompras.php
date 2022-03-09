@@ -2,6 +2,23 @@
 include_once('../Controladores/controladorCompra.php');
 ?>
 
+<?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro Guardado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+<?php if(isset($_GET['valueact']) && $_GET['valueact']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro Actualizado con Exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+
 <h1 class="h3 mb-2 text-gray-800">Compras Registradas</h1>
                   <!--  <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
                         For more information about DataTables, please visit the <a target="_blank"
@@ -53,7 +70,8 @@ include_once('../Controladores/controladorCompra.php');
                                             <td><?php echo $comprasRegistradas[$i]['Subtotal'] ?></td>
                                             <td><?php echo $comprasRegistradas[$i]['ISV'] ?></td>
                                             <td><?php echo $comprasRegistradas[$i]['Total'] ?></td>
-                                            <td><button class="btn btn-primary" type="submit"><i class="fas fa-eye"></i></button><button class="btn btn-primary" type="submit"><i class="fas fa-pen"></i></button><button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button></td>                           
+                                            <td> <a href="../Paginas/verDetalleVenta.php?id= <?php echo $comprasRegistradas[$i]['IdCompra'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-eye"></i></a>
+                                        <a href="../Paginas/actualizarCompra.php?id= <?php echo $comprasRegistradas[$i]['IdCompra'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-pen"></i></a></td>                           
                                         </tr>
                                         <?php  } ?>
                                     </tbody>

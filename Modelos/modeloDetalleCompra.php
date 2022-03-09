@@ -6,7 +6,6 @@
         private $cantidad; 
         private $precio;
         private $db; 
-        private $detalleCompra;
         private $productoArrayRecibido;
         private $cantidadArrayRecibido; 
         private $precioArrayRecibido; 
@@ -90,6 +89,33 @@
                 return false;
             }
 
+        }
+
+        public function getDetalleCompraEditar($id){
+            self::setNames();
+            $consulta = "SELECT * from DetalleCompra WHERE Compras_IdCompra = '".$id."';";
+            foreach($this->db->query($consulta) as $res){
+                $datosDetalleCompraEditar[] = $res;
+            }
+
+            return $datosDetalleCompraEditar;
+            $this->db=null;
+        }
+
+        public function updateDetalleCompra($IdCompraEnviado, $IdProductoEnviado){
+            self::setNames();
+            $consulta = "UPDATE DetalleCompra set Productos_IdProducto = '".$this->idProducto."', Cantidad = '".$this->cantidad."', PrecioCompra = '".$this->precio."' where Compras_IdCompra = '".$IdCompraEnviado."' and Productos_IdProducto = '".$IdProductoEnviado."';";
+            $result = $this->db->query($consulta);
+
+            if($result) {
+                return true;
+            }
+            else 
+            {
+                return false; 
+            } 
+           
+        
         }
 
 

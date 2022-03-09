@@ -34,15 +34,19 @@ include_once('../Controladores/controladorProveedores.php');
                                     </tfoot>
                                     <tbody>
                                         <?php
-                                            $listaProveedores = listarVentas();
+                                            $listaProveedores = listarProveedores();
                                             for($i=0; $i < sizeof($listaProveedores); $i++ ) {
+                                                $id = $listaProveedores[$i]['IdProveedor'];
                                         ?>
                                         <tr>
                                             <td> <?php echo $listaProveedores[$i]['IdProveedor'] ?></td>
                                             <td><?php echo $listaProveedores[$i]['NombreProveedor'] ?></td>
                                             <td><?php echo $listaProveedores[$i]['Contacto'] ?></td>
-                                            <td><?php echo $listaProveedores[$i]['Email'] ?></td>
-                                            <td><button class="btn btn-primary" type="submit"><i class="fas fa-eye"></i></button><button class="btn btn-primary" type="submit"><i class="fas fa-pen"></i></button><button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt"></i></button></td>                           
+                                            <td><?php echo $listaProveedores[$i]['Email'] ?></td>                                                
+                                            <td> 
+                                            <a href="../Paginas/actualizarProveedor.php?id= <?php echo $listaProveedores[$i]['IdProveedor'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-pen"></i></a>
+                                            <a href="../Paginas/eliminarProveedor.php?id= <?php echo $listaProveedores[$i]['IdProveedor'] ?>" class="btn btn-danger btn-sm active" role="button" aria-pressed="true"><i class="fas fa-trash-alt"></i></a>
+                                            </td>
                                         </tr>
                                        <?php  } ?>
                                     </tbody>

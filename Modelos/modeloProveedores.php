@@ -81,6 +81,51 @@
             $this->db = null;
         }
 
+        public function updateProveedor($IdProveedor) {
+            self::setNames();
+            $consulta= "UPDATE Proveedores set NombreProveedor = '".$this->NombreProveedor."', Contacto = '".$this->Contacto."', Email = '".$this->Email."' where IdProveedor = '".$IdProveedor."';";
+            $result= $this->db->query($consulta);
+
+            if($result) {
+                return true;
+            }
+            else 
+            {
+               
+                return false; 
+            } 
+            $this->db = null;
+        }
+
+        public function getDatosProveedoresEditar($id) {
+            self::setNames();
+            $consulta= "SELECT *  from Proveedores WHERE IdProveedor = '".$id."';";
+            foreach($this->db->query($consulta) as $res) {
+                $datosProveedorEditar[]= $res;
+            }
+        
+            return $datosProveedorEditar;
+         $this->db= null;
+        }
+
+        public function deleteProveedor($id){
+            self::setNames();
+            $consulta = "DELETE FROM Proveedores WHERE IdProveedor = '".$id."'; ";
+            $result = $this->db->query($consulta);
+
+            if($result) {
+                return true;
+            }
+            else 
+            {
+               
+                return false; 
+            } 
+            $this->db = null;
+
+        }
+
+
 
 
     }
