@@ -82,6 +82,6 @@
         </div>
         <?php }?>
         <div class="d-flex justify-content-end"><button class="btn btn-warning fw-bold float-end mr-2"  type= "submit" onclick="" >Actualizar Compra</button>
-        <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listadoVCompras.php">Cancelar</a>
+        <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listadoCompras.php">Cancelar</a>
         </div> <br>
     </form>
