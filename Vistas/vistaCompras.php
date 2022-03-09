@@ -72,7 +72,7 @@ include_once('../Controladores/controladorCompra.php');
                                             <td><?php echo $comprasRegistradas[$i]['Subtotal'] ?></td>
                                             <td><?php echo $comprasRegistradas[$i]['ISV'] ?></td>
                                             <td><?php echo $comprasRegistradas[$i]['Total'] ?></td>
-                                            <td> <a href="../Paginas/verDetalleVenta.php?id= <?php echo $comprasRegistradas[$i]['IdCompra'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-eye"></i></a>
+                                            <td> 
                                         <a href="../Paginas/actualizarCompra.php?id= <?php echo $comprasRegistradas[$i]['IdCompra'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-pen"></i></a></td>                           
                                         </tr>
                                         <?php  } ?>
