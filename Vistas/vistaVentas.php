@@ -71,7 +71,7 @@
                                         <td><?php echo $ventasRegistradas[$i]['Subtotal'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['ISV'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['Total'] ?></td>
-                                        <td> <a href="../Paginas/actualizarVenta.php?id= <?php echo $ventasRegistradas[$i]['IdVenta'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-eye"></i></a>
+                                        <td> <a href="../Paginas/verDetalleVenta.php?id= <?php echo $ventasRegistradas[$i]['IdVenta'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-eye"></i></a>
                                         <a href="../Paginas/actualizarVenta.php?id= <?php echo $ventasRegistradas[$i]['IdVenta'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-pen"></i></a>
                                             
                                         </tr>
