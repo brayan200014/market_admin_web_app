@@ -104,14 +104,11 @@
              self::setNames();
              $hoy = date("Ymd"); 
 
-         
                 $consulta='INSERT INTO Ventas(FechaVenta, Subtotal,ISV, Clientes_IdCliente, Usuarios_IdUsuario, Sucursales_IdSucursal)
                 values('.$hoy.','. $this->subtotal .','. $this->ISV .','.$this->idCliente.','.$this->idUsuario.','.$this->idSucursal.');';
                  $result= $this->db->query($consulta); 
   
               if($result) {
-  
-                
   
                   return true;
               }
@@ -120,11 +117,8 @@
                  
                  return false;
               }
-         
             
         }
-
-       
 
         public function getIdVentaAgregado() {
             self::setNames();
@@ -169,12 +163,10 @@
             $result= $this->db->query($consulta);
 
             if($result) {
-                setcookie('valid', 'Se actualizo con exito',time() + 60*60*24*30,'/'); 
                 return true;
             }
             else 
             {
-               
                 return false; 
             } 
            

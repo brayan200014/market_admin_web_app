@@ -41,6 +41,20 @@
             $this->db = null;
         }
 
+        //Busca el inventario de un producto
+        public function serchInventario($id) {
+
+            self::setNames();
+            $sql = "SELECT i.Productos_IdProducto, s.NombreSucursal, i.CantidadExistencia, i.PrecioVenta 
+                    FROM Inventario i INNER JOIN Sucursales s
+                    WHERE i.Sucursales_IdSucursal = s.IdSucursal AND i.Productos_IdProducto = $id;";
+            foreach ($this->db->query($sql) as $res) {
+                $this->producto[] = $res;
+            }
+            return $this->producto;
+            $this->db = null;
+        }
+
         //Lista las categorias
         public function getCategorias() {
 

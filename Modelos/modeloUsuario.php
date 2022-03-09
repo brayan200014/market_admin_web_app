@@ -38,10 +38,10 @@
             }
         }
 
-        public function modificarUsuario($id, $clave) {
+        public function modificarUsuario($id, $clave, $correo) {
 
             self::setNames();
-            $sql = "UPDATE Usuarios SET Contrasena = '$clave' WHERE IdUsuario = $id";
+            $sql = "UPDATE Usuarios SET Contrasena = '$clave', Correo = '$correo' WHERE IdUsuario = $id";
             $result = $this->db->query($sql);
     
             if ($result) {

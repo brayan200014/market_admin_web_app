@@ -1,13 +1,20 @@
 <?php include_once('../Controladores/controladorVenta.php') ?>
-<?php if(isset($_COOKIE['valid'])){ ?>
-     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-     <?php echo $_COOKIE['valid'];  ?>
+<?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro Guardado con exito
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-  
-<?php }  ?>
+<?php } ?>
+<?php if(isset($_GET['valueact']) && $_GET['valueact']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro Actualizado con Exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
   <!-- Page Heading -->
   <h1 class="h3 mb-2 text-gray-800">Ventas Registradas</h1>
                   <!--  <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
@@ -64,7 +71,7 @@
                                         <td><?php echo $ventasRegistradas[$i]['Subtotal'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['ISV'] ?></td>
                                         <td><?php echo $ventasRegistradas[$i]['Total'] ?></td>
-                                        <td> <a href="../Paginas/actualizarVenta.php?id= <?php echo $ventasRegistradas[$i]['IdVenta'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-eye"></i></a>
+                                        <td> <a href="../Paginas/verDetalleVenta.php?id= <?php echo $ventasRegistradas[$i]['IdVenta'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-eye"></i></a>
                                         <a href="../Paginas/actualizarVenta.php?id= <?php echo $ventasRegistradas[$i]['IdVenta'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-pen"></i></a>
                                             
                                         </tr>

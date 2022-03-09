@@ -1,7 +1,17 @@
 <?php include_once('../Controladores/controladorProductos.php'); ?>
 
 <div class="p-5">
+    <?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Registro Guardado con exito
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php } ?>
+
     <h1 class="h3 m-4 text-gray-800">Agregar producto</h1>
+
     <form class="g-3 needs-validation" action="../Controladores/controladorProductos.php" method="POST" novalidate>
         <div class="m-4 position-relative">
             <label for="nombre" class="form-label">Nombre del producto</label>

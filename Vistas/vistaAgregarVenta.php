@@ -34,14 +34,7 @@
  
 </div>
 <div class="mb-3">
-  <label for="IdUsuario" class="form-label">ID de Usuario</label>
-  <input type="text" class="form-control needs-validation" id="IdUsuario" name="IdUsuario" placeholder="Ingrese el id del Usuario" required pattern="[0-9]+"> 
-  <div class="valid-feedback">
-        Formato Valido
- </div>
-  <div class="invalid-feedback">
-       Este campo no puede estar vacio y debe tener un formato valido de solo numeros.
-  </div>
+  <input type="hidden" class="form-control needs-validation" id="IdUsuario" value="<?php echo $_SESSION['idUsuario']?>" name="IdUsuario" placeholder="Ingrese el id del Usuario" required pattern="[0-9]+"> 
 </div>
 <div class="mb-3">
   <label for="ISV" class="form-label">Impuesto sobre la Venta</label>
@@ -53,6 +46,7 @@
        Este campo no puede estar vacio y debe tener un formato valido de solo numeros y punto
   </div>
 </div>
+<input type= "hidden" name="validar" value="validar"></input>
 
 <h2 class="h3 mb-2 text-gray-800">Detalle de Venta</h2>
 
@@ -91,7 +85,7 @@
 </div>
 </div>
 <div class="d-flex justify-content-center"><button type="button" id="Agregar" onclick="agregarFila()" class="btn btn-outline-primary btn-sm">Agregar fila detalle</button></div>
-<div class="d-flex justify-content-end"><button class="btn btn-warning fw-bold float-end mr-2" type= "submit" onclick="<?php validarDatosVentas() ?>" >Agregar Venta</button>
+<div class="d-flex justify-content-end"><button class="btn btn-warning fw-bold float-end mr-2" type= "submit" onclick="" >Agregar Venta</button>
 <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listadoVentas.php">Cancelar</a>
 </div> <br>
  </form>

@@ -15,13 +15,13 @@
         <input type="hidden" id="id" name="id" value="<?php echo $id ?>">
         <div class="m-4 position-relative">
             <label for="nombre" class="form-label">Nombre del empleado: </label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del empleado" value="<?php echo $datos[0]['Nombre'] ?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,50}"  size="20" required>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del empleado" value="<?php echo $datos[0]['Nombre'] ?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,50}"  size="30" required>
             <div class="valid-tooltip">¡Campo válido!</div>
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>
         <div class="m-4 position-relative">
             <label for="apellido" class="form-label">Apellido del empleado: </label>
-            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese el apellido del empleado" value="<?php echo $datos[0]['Apellido'] ?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,50}"  size="20" required>
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese el apellido del empleado" value="<?php echo $datos[0]['Apellido'] ?>" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,50}"  size="30" required>
             <div class="valid-tooltip">¡Campo válido!</div>
             <div class="invalid-tooltip">Campo no valido.</div>
         </div>

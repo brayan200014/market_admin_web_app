@@ -1,11 +1,21 @@
 <?php include_once('../Controladores/controladorSucursales.php') ?>
 
 <div class="p-5">
+    <?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Registro Guardado con exito
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php } ?>
+
+<div class="p-5">
     <h1 class="h3 m-4 text-gray-800">Registro de Sucursales</h1>
     <form class="g-3 needs-validation" action="../Controladores/controladorSucursales.php" method="POST" novalidate>
         <div class="m-4 position-relative">
                 <label for="nombreS" class="form-label">Nombre de la Sucursal: </label>
-                <input type="text" class="form-control" id="nombreS" name="nombreS" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,50}"  size="20" required>
+                <input type="text" class="form-control" id="nombreS" name="nombreS" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,50}"  size="50" required>
 
                 <div class="valid-tooltip">¡Campo válido!</div>
                 <div class="invalid-tooltip">Campo no valido.</div>
