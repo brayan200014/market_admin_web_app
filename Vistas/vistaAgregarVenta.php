@@ -34,14 +34,7 @@
  
 </div>
 <div class="mb-3">
-  <label for="IdUsuario" class="form-label">ID de Usuario</label>
-  <input type="text" class="form-control needs-validation" id="IdUsuario" name="IdUsuario" placeholder="Ingrese el id del Usuario" required pattern="[0-9]+"> 
-  <div class="valid-feedback">
-        Formato Valido
- </div>
-  <div class="invalid-feedback">
-       Este campo no puede estar vacio y debe tener un formato valido de solo numeros.
-  </div>
+  <input type="hidden" class="form-control needs-validation" id="IdUsuario" value="<?php echo $_SESSION['idUsuario']?>" name="IdUsuario" placeholder="Ingrese el id del Usuario" required pattern="[0-9]+"> 
 </div>
 <div class="mb-3">
   <label for="ISV" class="form-label">Impuesto sobre la Venta</label>
