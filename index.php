@@ -16,6 +16,12 @@ else{
             $user = $_POST['usuario'];
             $pass = $_POST['clave'];
 
+            if(!empty($_POST["recuerdame"])) {
+                setcookie ("username",$_POST["usuario"],time()+ 3600);
+            } else {
+                setcookie("username","");
+            }
+
             $datos = iniciarSesion($user, $pass);
 
             if(sizeof($datos) > 0){
@@ -49,6 +55,7 @@ else{
     <title>Login</title>
 
     <!-- Custom fonts for this template-->
+    <link href="./Plantilla/css/login.css" rel="stylesheet" type="text/css">
     <link href="./Plantilla/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -59,7 +66,7 @@ else{
 
 </head>
 
-<body class="bg-gradient-primary">
+<body>
 
     <div class="container">
 
@@ -68,11 +75,11 @@ else{
 
             <div class="col-xl-10 col-lg-12 col-md-9 mt-5">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border border-primary shadow-sm my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"><img src="./Plantilla/img/bannerSupermercado.jpg" alt="banner" width="100%"></div>
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image"><img src="./Plantilla/img/bannerSupermercado.jpg" alt="banner" width="100%" height="100%"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
@@ -81,11 +88,16 @@ else{
                                     <form class="user" action="" method="POST">
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user"
-                                                id="usuario" name="usuario" placeholder="Ingresa tu nombre de usuario">
+                                                id="usuario" name="usuario" placeholder="Ingresa tu nombre de usuario" 
+                                                value="<?php if(isset($_COOKIE["username"])) { echo $_COOKIE["username"]; } ?>">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
-                                                id="clave" name="clave" placeholder="Contraseña">
+                                                id="clave" name="clave" placeholder="Contraseña" >
+                                        </div>
+                                        <div class="custom-control custom-checkbox small">
+                                            <input type="checkbox" class="custom-control-input" id="recuerdame" name="recuerdame" checked>
+                                            <label class="custom-control-label" for="recuerdame">Recuerdame</label>
                                         </div>
                                         <div class="alert text-danger">
                                             <?php echo isset($alert) ? $alert : ''; ?>

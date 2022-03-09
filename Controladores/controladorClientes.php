@@ -39,7 +39,7 @@
         if(agregarCliente($Nombre, $Apellido, $Telefono,$Direccion, $Email, $Identidad, $RTN)){
             echo "<script>
                     alert('Cliente ingresado con exito');
-                    window.location= '../Paginas/paginaAgregarCliente.php'
+                    window.location= '../Paginas/paginatablaclientes.php'
                 </script>";
         }else{
             echo "<script>

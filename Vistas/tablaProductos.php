@@ -36,6 +36,9 @@
                             <td><?php echo $datosProductos[$i]['DescripcionProducto'] ?></td>
                             <td><?php echo $datosProductos[$i]['NombreCategoria'] ?></td>
                             <td>
+                                <a class="btn btn-primary" href="../Paginas/verInventario.php?idPro=<?php echo $datosProductos[$i]['IdProducto'] ?>">
+                                    <i class="fas fa-eye"></i>
+                                </a>
                                 <a class="btn btn-primary" href="../Paginas/productoEditar.php?id=<?php echo $datosProductos[$i]['IdProducto']?>">
                                     <i class="fas fa-pen"></i>
                                 </a>
