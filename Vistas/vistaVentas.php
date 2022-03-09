@@ -1,4 +1,20 @@
 <?php include_once('../Controladores/controladorVenta.php') ?>
+<?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro Guardado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+<?php if(isset($_GET['valueact']) && $_GET['valueact']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro Actualizado con Exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
   <!-- Page Heading -->
   <h1 class="h3 mb-2 text-gray-800">Ventas Registradas</h1>
                   <!--  <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.

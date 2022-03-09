@@ -4,8 +4,15 @@
 
 <?php 
 
+        if(isset($_POST['IdVentaExtraido'])) {
+            $boolean= updateVentaEnviada($_POST['IdVentaExtraido']);
+            echo "<script>window.location= '../Paginas/listadoVentas.php?valueact='+$boolean</script>";
+        }
+         if(isset($_POST['validar'])) {
+            $boolean= setGuardarVentaEnviada();
+            echo "<script>window.location= '../Paginas/listadoVentas.php?value='+$boolean</script>";
+        }
        
-
         function getDatosVentaEditar() {
             if(isset($_GET['id'])){
                 $id= $_GET['id']; 
@@ -19,13 +26,8 @@
                 else 
                 {
                     return false;
-                }
-            
-                
-            }
-    
-          
-            
+                } 
+            } 
         }
 
         function getDatosDetalleVentaEditar() {
@@ -39,28 +41,14 @@
                 else 
                 {
                     return false;
-                }
-            
-                
-            }
-    
-           
+                }    
+            } 
         }
     
     function validarDatosVentas() {
         if(!empty($_POST)) {
             setGuardarVentaEnviada();
 
-        }
-    }
-
-    function validarDatosUpdateVenta($idObtenido) {
-        if(!empty($_POST)) {
-            updateVentaEnviada($idObtenido);
-        }
-        else 
-        {
-            
         }
     }
 
@@ -75,8 +63,6 @@
         $sucursales= $modeloVenta->getSucursales();
         return $sucursales;
     }
-
-   
 
     function setGuardarVentaEnviada() {
 
@@ -110,30 +96,17 @@
             $modeloDetalle -> setCantidad($CantidadArrayRecibido[$i]);
             $modeloDetalle -> setPrecio($PrecioArrayRecibido[$i]);
             $modeloDetalle -> setIdVenta($idVentaAgregado[0]['IdVenta']);
-         $modeloDetalle -> setGuardarDetalleVenta();
+            $modeloDetalle -> setGuardarDetalleVenta();
 
-           /* if($booleanDetalle==true) {
-                  $_SESSION['message']= 'Se guardo con exito';
-              }
-              else 
-              {
-                  $_SESSION['message']= 'Ocurrio un error';
-              }*/
         }
 
 
-      /*  if($boolean==true) {
-          
-            $_SESSION['message']= 'Se guardo con exito';
-            
-        }
-        else 
-        {
-         
-
-            $_SESSION['message']= 'Ocurrio un error';
-        }*/
-
+        if($boolean==true) {
+            return true;
+       }else 
+       {
+           return false; 
+       }
     }
 
 
@@ -175,8 +148,12 @@
                 $modeloDetalle -> updateDetalleVenta($idVentaGet, $datosDetalle[$i]['Productos_IdProducto']);
         }
         
-      
-       
+        if($boolean==true) {
+            return true;
+       }else 
+       {
+           return false; 
+       }
        
     }
 

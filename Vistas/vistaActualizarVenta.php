@@ -41,6 +41,9 @@
   <input type="hidden" class="form-control needs-validation" id="IdUsuario" name="IdUsuario" placeholder="Ingrese el id del Usuario" value="<?php echo $datos[0]['Usuarios_IdUsuario'] ?>" required pattern="[0-9]+">
 </div>
 <div class="mb-3">
+  <input type="hidden" class="form-control needs-validation" id="IdVentaExtraido" name="IdVentaExtraido" placeholder="Ingrese el id del Usuario" value="<?php echo $idGet ?>" required pattern="[0-9]+">
+</div>
+<div class="mb-3">
   <label for="ISV" class="form-label">Impuesto sobre la Venta</label>
   <input type="text" class="form-control needs-validation" id="ISV" placeholder="Ingrese el ISV" name="ISV" value="<?php echo $datos[0]['ISV'] ?>" required pattern="^[0-9]+([.][0-9]+)?$">
   <div class="valid-feedback">
@@ -92,9 +95,7 @@
 </div>
 </div>
 <?php }?>
-
-           
-<div class="d-flex justify-content-end"><button class="btn btn-warning fw-bold float-end mr-2" type= "submit" onclick="<?php validarDatosUpdateVenta($idGet) ?>" >Actualizar Venta</button>
+<div class="d-flex justify-content-end"><button class="btn btn-warning fw-bold float-end mr-2"  type= "submit" onclick="" >Actualizar Venta</button>
 <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listadoVentas.php">Cancelar</a>
 </div> <br>
  </form>
