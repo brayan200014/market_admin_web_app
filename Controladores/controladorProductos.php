@@ -6,6 +6,11 @@
         return $modeloProducto->getProductos();
     }
 
+    function listarInventario($id){
+        $modeloProducto = new Producto();
+        return $modeloProducto->serchInventario($id);
+    }
+
     function listarCategorias(){
         $modeloProducto = new Producto();
         return $modeloProducto->getCategorias();
