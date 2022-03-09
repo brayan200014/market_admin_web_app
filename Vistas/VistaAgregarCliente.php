@@ -5,7 +5,7 @@
 
   <div class="m-4 position-relative">
     <label for="Nombre" class="form-label">Nombre del cliente:</label>
-    <input type="text" class="form-control needs-validation" id="Nombre" name="Nombre" placeholder="Nombre del cliente" required>
+    <input type="text" class="form-control needs-validation" id="Nombre" name="Nombre" placeholder="Ingrese el nombre del cliente" required>
     <div class="valid-feedback">
         Formato Valido
     </div>
@@ -16,7 +16,7 @@
 
   <div class="m-4 position-relative">
     <label for="Apellido" class="form-label">Apellido del cliente:</label>
-    <input type="text" class="form-control needs-validation" id="Apellido" name="Apellido" placeholder="Apellido del cliente" required>
+    <input type="text" class="form-control needs-validation" id="Apellido" name="Apellido" placeholder="Ingrese el apellido del cliente" required>
     <div class="valid-feedback">
         Formato Valido
     </div>
@@ -27,7 +27,7 @@
 
   <div class="m-4 position-relative">
     <label for="Telefono" class="form-label">Telefono:</label>
-    <input type="text" class="form-control needs-validation" id="Telefono" name="Telefono" placeholder="Telefono del cliente" required>
+    <input type="text" class="form-control needs-validation" id="Telefono" name="Telefono" placeholder="Ingrese el telefono del cliente" required>
     <div class="valid-feedback">
         Formato Valido
     </div>
@@ -39,7 +39,7 @@
 
 <div class="m-4 position-relative">
     <label for="Direccion" class="form-label">Dirección del cliente:</label>
-    <input type="text" class="form-control needs-validation" id="Direccion" name="Direccion" placeholder="Direccion del cliente" required>
+    <input type="text" class="form-control needs-validation" id="Direccion" name="Direccion" placeholder="Ingrese la direccion del cliente" required>
     <div class="valid-feedback">
         Formato Valido
     </div>
@@ -50,7 +50,7 @@
 
  <div class="m-4 position-relative">
     <label for="Email" class="form-label">Correo:</label>
-    <input type="text" class="form-control needs-validation" id="Email" name="Email" placeholder="Direccion del cliente" required>
+    <input type="text" class="form-control needs-validation" id="Email" name="Email" placeholder="Ingrese el correo del cliente" required>
     <div class="valid-feedback">
         Formato Valido
     </div>
@@ -60,8 +60,8 @@
   </div>
 
   <div class="m-4 position-relative">
-    <label for="Identidad" class="form-label"># de identidad del cliente:</label>
-    <input type="text" class="form-control needs-validation" id="Identidad" name="Identidad" placeholder="# identidad del cliente" required>
+    <label for="Identidad" class="form-label">Número de identidad del cliente:</label>
+    <input type="text" class="form-control needs-validation" id="Identidad" name="Identidad" placeholder="Ingrese el numero de identidad del cliente" required>
     <div class="valid-feedback">
         Formato Valido
     </div>
@@ -72,7 +72,7 @@
 
   <div class="m-4 position-relative">
     <label for="RTN" class="form-label">RTN del cliente:</label>
-    <input type="text" class="form-control needs-validation" id="RTN" name="RTN" placeholder="RTN del cliente" required>
+    <input type="text" class="form-control needs-validation" id="RTN" name="RTN" placeholder="Ingrese el RTN del cliente" required>
     <div class="valid-feedback">
         Formato Valido
     </div>
