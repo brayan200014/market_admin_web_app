@@ -42,6 +42,7 @@ include_once('../Controladores/controladorCompra.php');
                                             <th>Subtotal</th>
                                             <th>ISV</th>
                                             <th>Total</th>
+                                            <th>Opciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -54,6 +55,7 @@ include_once('../Controladores/controladorCompra.php');
                                             <th>Subtotal</th>
                                             <th>ISV</th>
                                             <th>Total</th>
+                                            <th>Opciones</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>

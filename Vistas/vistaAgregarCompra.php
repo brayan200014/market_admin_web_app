@@ -41,7 +41,7 @@ include_once('../Controladores/controladorCompra.php');
 
         <h2 class="h3 mb-2 text-gray-800">Detalle de Compra</h2>
 
-        <div class="container-fluid" id="containerFila">
+        <div class="container-fluid" id="containerFilaVenta">
             <div class=".container-fluid d-flex flex-wrap justify-content-between" >
                 <div class="mb-3">
                     <label for="IdProducto" class="form-label">ID del Producto</label>

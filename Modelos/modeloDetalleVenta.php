@@ -93,6 +93,34 @@
                 return false; 
             }
         }
+        
+        public function getDetalleVentaEditar($id) {
+            $datosDetalleVentaEditar;
+            self::setNames();
+            $consulta= 'SELECT *  from DetalleVenta WHERE Ventas_IdVenta= '.$id.';';
+            foreach($this->db->query($consulta) as $res) {
+                $datosDetalleVentaEditar[]= $res;
+         }
+
+         return $datosDetalleVentaEditar;
+         $this->db= null;
+        }
+
+        public function updateDetalleVenta($IdVentaEnviado,$IdProductoEnviado) {
+            self::setNames();
+            $consulta= ' UPDATE DetalleVenta SET Productos_IdProducto='. $this->idproducto .',Cantidad='. $this->cantidad .', 
+            PrecioVenta='. $this->precio .' where Ventas_IdVenta='.$IdVentaEnviado.' and Productos_IdProducto='.$IdProductoEnviado.'';
+            $result= $this->db->query($consulta);
+
+            if($result) {
+                return true;
+            }
+            else 
+            {
+                return false; 
+            } 
+           
+        }
 
 
     }

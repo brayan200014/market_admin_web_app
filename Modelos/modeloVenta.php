@@ -100,19 +100,24 @@
          }
 
          public function setGuardarVenta(){
+            
              self::setNames();
              $hoy = date("Ymd"); 
-             $consulta='INSERT INTO Ventas(FechaVenta, Subtotal,ISV, Clientes_IdCliente, Usuarios_IdUsuario, Sucursales_IdSucursal)
-              values('.$hoy.','. 700 .','. $this->ISV .','.$this->idCliente.','.$this->idUsuario.','.$this->idSucursal.');';
-               $result= $this->db->query($consulta); 
 
-            if($result) {
-                return true;
-            }
-            else 
-            {
-                return false; 
-            }
+                $consulta='INSERT INTO Ventas(FechaVenta, Subtotal,ISV, Clientes_IdCliente, Usuarios_IdUsuario, Sucursales_IdSucursal)
+                values('.$hoy.','. $this->subtotal .','. $this->ISV .','.$this->idCliente.','.$this->idUsuario.','.$this->idSucursal.');';
+                 $result= $this->db->query($consulta); 
+  
+              if($result) {
+  
+                  return true;
+              }
+              else 
+              {
+                 
+                 return false;
+              }
+            
         }
 
         public function getIdVentaAgregado() {
@@ -124,6 +129,47 @@
 
          return $this->idVentaAgregado;
          $this->db= null;
+        }
+
+        
+        public function getDatosVentaEditar($id) {
+            $datosVentaEditar;
+            self::setNames();
+            $consulta= 'SELECT *  from Ventas WHERE IdVenta= '.$id.';';
+            foreach($this->db->query($consulta) as $res) {
+                $datosVentaEditar[]= $res;
+         }
+
+         return $datosVentaEditar;
+         $this->db= null;
+        }
+
+        public function getSucursales() {
+            $datosSucursales;
+            self::setNames();
+            $consulta= 'SELECT IdSucursal, NombreSucursal FROM Sucursales;';
+            foreach($this->db->query($consulta) as $res) {
+                $datosSucursales[]= $res;
+         }
+
+         return $datosSucursales;
+         $this->db= null;
+        }
+
+        public function updateVenta($IdVentaEnviado) {
+            self::setNames();
+            $consulta= ' UPDATE Ventas SET Clientes_IdCliente='. $this->idCliente .',Sucursales_IdSucursal='. $this->idSucursal .', 
+            Usuarios_IdUsuario='. $this->idUsuario .', Subtotal='. $this->subtotal .', ISV='. $this->ISV .' where IdVenta='. $IdVentaEnviado .';';
+            $result= $this->db->query($consulta);
+
+            if($result) {
+                return true;
+            }
+            else 
+            {
+                return false; 
+            } 
+           
         }
 
     }
