@@ -46,8 +46,7 @@
     
         if(agregarProducto($nombre, $descripcion, $isv, $img, true , $categoriaId)){
             echo "<script>
-                    alert('Producto ingresado con exito');
-                    window.location= '../Paginas/productoFormulario.php'
+                    window.location= '../Paginas/productoFormulario.php?value=1'
                 </script>";
         }
         else{
@@ -68,13 +67,13 @@
       
         if(modificarProducto($id, $nombre, $descripcion, $isv, $img, true , $categoriaId)){
             echo "<script>
-                    alert('Producto modificado con exito');
-                    window.location= '../Paginas/productoTabla.php'
+                    window.location= '../Paginas/productoTabla.php?value=1'
                 </script>";
         }
         else{
             echo "<script>
                     alert('Error al modificar el producto');
+                    window.location= '../Paginas/productoTabla.php'
                 </script>";
         }
     }

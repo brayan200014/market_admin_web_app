@@ -12,25 +12,25 @@
         return $modeloUsuario->buscarUsuario($id);
     }
 
-    function cambiarContrasena($id, $clave){
+    function modificarUsuario($id, $clave, $correo){
         $modeloUsuario = new Usuario();
-        return $modeloUsuario->modificarUsuario($id, $clave);
+        return $modeloUsuario->modificarUsuario($id, $clave, $correo);
     }
 
     if (isset($_POST['modificarUsuario'])) {
         $id = $_POST['id'];
         $clave = $_POST['clave'];
+        $correo = $_POST['correo'];
 
-        if(cambiarContrasena($id, $clave)){
+        if(modificarUsuario($id, $clave, $correo)){
             echo "<script>
-                    alert('Usuario modificado con exito');
-                    window.location= '../Paginas/principal.php';
+                    window.location= '../Paginas/editarUsuario.php?id=$id&value=1';
                 </script>";
         }
         else{
             echo "<script>
                     alert('Error al moficar el usuario');
-                    window.location= '../Paginas/principal.php';
+                    window.location= '../Paginas/editarUsuario.php?id=$id';
                 </script>";
         }
         

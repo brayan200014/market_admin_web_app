@@ -7,8 +7,7 @@
         
         if(deshabilitarProducto($id)){
             echo "<script>
-                    alert('Producto eliminado con exito');
-                    window.location= '../Paginas/productoTabla.php'
+                    window.location= '../Paginas/productoTabla.php?valueDelete=1'
                 </script>";
         }
         else{
