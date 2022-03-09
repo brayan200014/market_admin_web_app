@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +23,9 @@
     <!-- Custom styles for this template-->
     <link href="../Plantilla/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this page -->
+    <link href="../Plantilla/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"><!-- New -->
+
 </head>
 
 <body id="page-top">
@@ -31,7 +37,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../Paginas/principal.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -43,7 +49,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="../Paginas/principal.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Principal</span></a>
             </li>
@@ -66,8 +72,8 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="../Paginas/agregarVenta.php">Agregar</a>
+                        <a class="collapse-item" href="../Paginas/listadoVentas.php">Ver información</a>
                     </div>
                 </div>
             </li>
@@ -82,8 +88,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="../Paginas/agregarCompra.php">Agregar</a>
+                        <a class="collapse-item" href="../Paginas/listadoCompras.php">Ver información</a>
                     </div>
                 </div>
             </li>
@@ -98,8 +104,8 @@
                 <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="../Paginas/productoFormulario.php">Agregar</a>
+                        <a class="collapse-item" href="../Paginas/productoTabla.php">Ver información</a>
                     </div>
                 </div>
             </li>
@@ -130,8 +136,8 @@
                 <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="./agregarProveedor.php">Agregar</a>
+                        <a class="collapse-item" href="./listadoProveedores.php">Ver información</a>
                     </div>
                 </div>
             </li>
@@ -146,8 +152,8 @@
                 <div id="collapseSix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="../Paginas/agregarEmpleados.php">Agregar</a>
+                        <a class="collapse-item" href="../Paginas/listarEmpleados.php">Ver información</a>
                     </div>
                 </div>
             </li>
@@ -162,8 +168,8 @@
                 <div id="collapseSeven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opciones:</h6>
-                        <a class="collapse-item" href="#">Agregar</a>
-                        <a class="collapse-item" href="#">Ver información</a>
+                        <a class="collapse-item" href="../Paginas/agregarSucursales.php">Agregar</a>
+                        <a class="collapse-item" href="../Paginas/listarSucursales.php">Ver información</a>
                     </div>
                 </div>
             </li>
@@ -202,14 +208,14 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600"><?php echo $_SESSION['nombreUsuario'] ?></span>
                                 <img class="img-profile rounded-circle"
-                                    src="../PLantilla/img/undraw_profile.svg">
+                                    src="../Plantilla/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="../Paginas/editarUsuario.php?id=<?php echo $_SESSION['idUsuario'] ?>">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
