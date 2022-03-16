@@ -51,29 +51,42 @@
         }
     }
 
+    if(isset($_POST['modificarProveedor']))
+    {
+        $id = $_POST['id'];
+        $NombreProveedor = $_POST['id'];
+        $Contacto = $_POST['Contacto'];
+        $Email = $_POST['Email'];
 
-    function validarDatosUpdateProveedor($idObtenido) {
-        if(!empty($_POST)) {
-            updateProveedorEnviado($idObtenido);
-        }
-        else 
+        if(updateProveedorEnviado($id, $NombreProveedor, $Contacto, $Email))
         {
-            
+            echo "
+                    <script>
+                        window.location = '../Paginas/listadoProveedores.php?value=1'
+                    </script>
+                 ";
+        }
+        else
+        {
+            echo "
+                    <script>
+                        alert('Error al actualizar el Proveedor');
+                    </script>
+                 ";
+                 
         }
     }
 
-    function updateProveedorEnviado($idProveedorGet) {
+
+
+
+    function updateProveedorEnviado($idProveedorGet, $NombreProveedorGet, $ContactoGet, $EmailGet) {
        
-            $modeloProveedor = new Proveedor();
-            $NombreProveedor= htmlspecialchars($_POST['NombreProveedor']);
-            $modeloProveedor->setNombreProveedor($NombreProveedor);
-            $Contacto= htmlspecialchars($_POST['Contacto']);
-            $modeloProveedor->setContacto($Contacto);
-            $Email=  htmlspecialchars($_POST['Email']);
-            $modeloProveedor->setEmail($Email);
-            $modeloProveedor->updateProveedor($idProveedorGet);
-    
+        $modeloProveedor = new Proveedor();
+        return $modeloProveedor->updateProveedor($idProveedorGet, $NombreProveedorGet, $ContactoGet, $EmailGet);
+
     }
+
 
     function eliminarProveedor($id){
         $modeloProveedor = new Proveedor();

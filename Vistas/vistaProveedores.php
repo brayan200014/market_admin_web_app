@@ -5,6 +5,23 @@ include_once('../Controladores/controladorProveedores.php');
 
 ?>
 
+<?php if(isset($_GET['value']) && $_GET['value']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro modificado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+<?php if(isset($_GET['valueDelete']) && $_GET['valueDelete']==1) { ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+     Registro eliminado con exito
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php } ?>
+
 <h1 class="h3 mb-2 text-gray-800">Proveedores Registrados</h1>
 
 <div class="card shadow mb-4">

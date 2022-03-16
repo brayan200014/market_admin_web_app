@@ -5,8 +5,9 @@ include_once("../Controladores/controladorProveedores.php");
 $idGet = $_GET['id'];
 $datos = getDatosProveedoresEditar();
 ?>
-<h1 class="h3 mb-2 text-gray-800">Actualizar Venta</h1>
+<h1 class="h3 mb-2 text-gray-800">Actualizar Proveedor</h1>
 <form class="needs-validation" style="margin: 5%" novalidate action="" method="POST" enctype="application/x-www-form-urlencoded">
+    <input type="hidden" id="id" name="id" value="<?php echo $idGet ?>">
     <div class="mb-3">
         <label for="NombreProveedor" class="form-label">Nombre Proveedor</label>
         <input type="text" class="form-control needs-validation" id="NombreProveedor" name="NombreProveedor" placeholder="Ingrese el Nombre del Proveedor" value="<?php echo $datos[0]['NombreProveedor'] ?>" required pattern="[a-zA-Z0-9]+">
@@ -38,7 +39,7 @@ $datos = getDatosProveedoresEditar();
         </div>
     </div>
 
-    <div class="d-flex justify-content-end"><button class="btn btn-warning fw-bold float-end mr-2" type="submit" onclick="<?php validarDatosUpdateProveedor($idGet) ?>">Actualizar Proveedor</button>
-        <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listadoVentas.php">Cancelar</a>
+    <div class="d-flex justify-content-end"><button class="btn btn-warning fw-bold float-end mr-2" type="submit" name="modificarProveedor">Actualizar Proveedor</button>
+        <a class="btn btn-secondary fw-bold float-end" href="../Paginas/listadoProveedores.php">Cancelar</a>
     </div> <br>
 </form>

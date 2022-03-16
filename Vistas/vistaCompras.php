@@ -62,6 +62,7 @@ include_once('../Controladores/controladorCompra.php');
                                         <?php
                                             $comprasRegistradas= getComprasRegistradas();
                                             for($i=0; $i < sizeof($comprasRegistradas); $i++ ) {
+                                            $id = $comprasRegistradas[$i]['IdCompra'];
                                         ?>
                                         <tr>
                                             <td> <?php echo $comprasRegistradas[$i]['IdCompra'] ?></td>
@@ -73,7 +74,9 @@ include_once('../Controladores/controladorCompra.php');
                                             <td><?php echo $comprasRegistradas[$i]['ISV'] ?></td>
                                             <td><?php echo $comprasRegistradas[$i]['Total'] ?></td>
                                             <td> 
-                                        <a href="../Paginas/actualizarCompra.php?id= <?php echo $comprasRegistradas[$i]['IdCompra'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-pen"></i></a></td>                           
+                                                <a href="../Paginas/verDetalleCompra.php?id= <?php echo $comprasRegistradas[$i]['IdCompra'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-eye"></i></a>
+                                                <a href="../Paginas/actualizarCompra.php?id= <?php echo $comprasRegistradas[$i]['IdCompra'] ?>" class="btn btn-primary btn-sm active" role="button" aria-pressed="true"><i class="fas fa-pen"></i></a>
+                                            </td>                           
                                         </tr>
                                         <?php  } ?>
                                     </tbody>

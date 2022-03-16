@@ -7,8 +7,7 @@
         if((eliminarProveedor($id)))
         {
             echo "<script>
-            alert('Proveedor eliminado con Exito.');
-            window.location= '../Paginas/listadoProveedores.php'
+            window.location= '../Paginas/listadoProveedores.php?valueDelete=1'
         </script>";
         }
         else{

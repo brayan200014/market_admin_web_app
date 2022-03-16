@@ -81,9 +81,9 @@
             $this->db = null;
         }
 
-        public function updateProveedor($IdProveedor) {
+        public function updateProveedor($IdProveedor, $NombreProveedor, $Contacto, $Email) {
             self::setNames();
-            $consulta= "UPDATE Proveedores set NombreProveedor = '".$this->NombreProveedor."', Contacto = '".$this->Contacto."', Email = '".$this->Email."' where IdProveedor = '".$IdProveedor."';";
+            $consulta= "UPDATE Proveedores set NombreProveedor = '".$NombreProveedor."', Contacto = '".$Contacto."', Email = '".$Email."' where IdProveedor = '".$IdProveedor."';";
             $result= $this->db->query($consulta);
 
             if($result) {
