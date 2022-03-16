@@ -54,7 +54,7 @@
     if(isset($_POST['modificarProveedor']))
     {
         $id = $_POST['id'];
-        $NombreProveedor = $_POST['id'];
+        $NombreProveedor = $_POST['NombreProveedor'];
         $Contacto = $_POST['Contacto'];
         $Email = $_POST['Email'];
 
