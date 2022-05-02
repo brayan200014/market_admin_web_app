@@ -1,2 +1,2 @@
-# supermercadoWeb
-Proyecto Desarrollo Web 2
+# Market Admin Web App
+This is Admin Web Application for a Supermarket 
